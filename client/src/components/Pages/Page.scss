@@ -1,0 +1,59 @@
+.page-wrapper {
+    width: 100%;
+
+    .page {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .page-social-networks {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+
+        .social {
+            min-height: 40px;
+            min-width: 150px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+
+            i {
+                background-color: #fff;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                padding: 5px;
+                color: #000;
+            }
+        }
+
+        .facebook {
+            background-image: linear-gradient(to top right, #0254fe, #11a9f2);
+        }
+
+        .whatsapp {
+            background-image: linear-gradient(to top right, #33ba1f, #97e67b);
+        }
+
+        .viber {
+            background-image: linear-gradient(to top right, #552267, #b280bf);
+        }
+    }
+}
+
+.order-form-container {
+    height: fit-content;
+    margin: auto;
+
+    .order-form-header {
+        font-weight: bold;
+        font-size: 22px;
+        width: fit-content;
+        margin: auto;
+        padding: 5px 15px 15px 15px;
+    }
+}

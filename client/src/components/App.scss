@@ -1,0 +1,32 @@
+@import '../components/assets/variables.scss';
+
+body {
+    font-family: $montserrat, sans-serif;
+    margin: 0;
+    background-color: $main-background-color;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.block-header {
+    font-size: 23px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.block-wrapper {
+    padding: 0 0 20px 0;
+}
+
+.component-wrapper {
+
+    .container {
+        min-height: calc(100vh - 276px);
+        width: 75%;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+    }
+}
