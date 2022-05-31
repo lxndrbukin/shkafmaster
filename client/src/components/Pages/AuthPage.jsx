@@ -8,11 +8,11 @@ class AuthPage extends React.Component {
 			<div className="auth-forms">
 				<div className="auth-section">
 					<div className="auth-section_header">
-							Войти в систему
+						Войти в систему
 					</div>
 					<Auth />
 				</div>
-				<div className="auth-section-separator">
+				{/* <div className="auth-section-separator">
 					<div className="auth-section-separator_icon-wrapper">
 						<div className="auth-section-separator_icon">
 							<i className="fas fa-user"></i>
@@ -24,7 +24,7 @@ class AuthPage extends React.Component {
 						Зарегистрироваться
 					</div>
 					<NewAuth />
-				</div>
+				</div> */}
 			</div>
 		)
 	}

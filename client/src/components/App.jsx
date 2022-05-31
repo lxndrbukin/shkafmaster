@@ -9,24 +9,24 @@ import OrderPage from './Pages/OrderPage';
 import Socials from './Socials/Socials';
 
 class App extends React.Component {
-    render() {
-        return (
-            <div className="component-wrapper">
-                <Router>
-                    <Header />
-                    <div className="container">
-                        <Routes>
-                            <Route path="/" element={<MainPage />} />
-                            <Route path="/login" element={<AuthPage />} />
-                            <Route path="/order" element={<OrderPage />} />
-                        </Routes>
-                        {/* <Socials /> */}
-                    </div>
-                    <Footer />
-                </Router>
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div className="component-wrapper">
+				<Router>
+					<Header />
+					<div className="container">
+						<Routes>
+							<Route path="/" element={<MainPage />} />
+							<Route path="/login" element={<AuthPage />} />
+							<Route path="/order" element={<OrderPage />} />
+						</Routes>
+						{/* <Socials /> */}
+					</div>
+					<Footer />
+				</Router>
+			</div>
+		)
+	}
 }
 
 export default App;
