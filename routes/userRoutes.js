@@ -16,9 +16,11 @@ module.exports = app => {
     });
     if (!user.login) {
       res.redirect('/');
+      console.log('Nope!');
       return;
     } else if (!user.password) {
       res.redirect('/');
+      console.log('Nope!');
       return;
     } else {
       user.save();

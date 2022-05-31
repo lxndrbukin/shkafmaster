@@ -15,6 +15,12 @@ module.exports = app => {
 			item: req.body.item,
 			comment: req.body.comment
 		});
+		const { name, phone, item, comment } = order;
+		if (!name || !phone || !item || !comment) {
+			res.redirect('/');
+			console.log('empty order');
+			return;
+		}
 		console.log(order);
 		order.save();
 		res.send(order);

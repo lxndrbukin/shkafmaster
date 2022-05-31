@@ -1,86 +1,94 @@
 @import '../assets/variables.scss';
 
 .footer-wrapper {
+	
+	.footer {
+		margin: auto;
+		width: 75%;
+		padding: 29px 0 28px 0;
+		
+		.footer-section {
+			display: flex;
+			justify-content: space-between;
+			margin: 0 0 15px 0;
+			
+			.footer-links {
+				font-size: 14px;
+				
+				ul {
+					display: flex;
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					
+					li {
+						padding: 0 7px;
+						
+						a {
+							&:hover {
+								color:rgb(153, 153, 153);
+							}
+						}
+					}
+				}
+			}
+			
+			.footer-contacts {
+				display: flex;
+				flex-direction: column;
+				font-size: 21px;
+				
+				.footer-contact-numbers {
+					display: flex;
+					flex-direction: column;
+					margin: 0 0 14px 0;
+				}
+				
+				.footer-contact-socials {
+					display: flex;
+					margin: auto;
+					
+					.fab {
+						padding: 0 10px;
+						color: rgb(153, 153, 153);
+						transition: color .5s ease;
+						
+						&:hover {
+							color: rgb(185, 185, 185);
+							transition: color .5s ease;
+						}
+					}
+					
+					.fa-vk {
+						font-size: 21px;
+					}
+					
+					.fa-facebook-square {
+						font-size: 22px;
+					}
+					
+					.fa-odnoklassniki {
+						font-size: 19px;
+					}
+					
+					.fa-instagram {
+						font-size: 23px;
+					}
+				}
+			}
+		}
+		
+		.footer-copyright {
+			text-align: right;
+			font-size: 15px;
+		}
+	}
+}
 
-    .footer {
-        margin: auto;
-        width: 75%;
-        padding: 29px 0 28px 0;
-    
-        .footer-section {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 0 15px 0;
-    
-            .footer-links {
-                font-size: 14px;
-                
-                ul {
-                    display: flex;
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-        
-                    li {
-                        padding: 0 7px;
-
-                        a {
-                            &:hover {
-                                color:rgb(153, 153, 153);
-                            }
-                        }
-                    }
-                }
-            }
-    
-            .footer-contacts {
-                display: flex;
-                flex-direction: column;
-                font-size: 21px;
-
-                .footer-contact-numbers {
-                    display: flex;
-                    flex-direction: column;
-                    margin: 0 0 14px 0;
-                }
-
-                .footer-contact-socials {
-                    display: flex;
-                    margin: auto;
-
-                    .fab {
-                        padding: 0 10px;
-                        color: rgb(153, 153, 153);
-                        transition: color .5s ease;
-
-                        &:hover {
-                            color: rgb(185, 185, 185);
-                            transition: color .5s ease;
-                        }
-                    }
-
-                    .fa-vk {
-                        font-size: 21px;
-                    }
-
-                    .fa-facebook-square {
-                        font-size: 22px;
-                    }
-
-                    .fa-odnoklassniki {
-                        font-size: 19px;
-                    }
-
-                    .fa-instagram {
-                        font-size: 23px;
-                    }
-                }
-            }
-        }
-
-        .footer-copyright {
-            text-align: right;
-            font-size: 15px;
-        }
-    }
+@media only screen and (max-width: 1200px) {
+	.footer-wrapper {
+		.footer {
+			width: 97%;
+		}
+	}
 }
