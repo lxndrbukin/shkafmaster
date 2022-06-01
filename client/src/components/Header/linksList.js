@@ -2,21 +2,21 @@ export const linksList = [
     {
         name: {
             ru: "Главная страница",
-            md: "Pagina principala"
+            ro: "Pagina principala"
         },
         path: "/"
     },
     {
         name: {
             ru: "О нас",
-            md: "Despre noi"
+            ro: "Despre noi"
         },
         path: "/info"
     },
     {
         name: {
             ru: "Контакты",
-            md: "Contacte"
+            ro: "Contacte"
         },
         path: "/contacts"
     }

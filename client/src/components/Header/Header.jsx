@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.scss';
+import { supportedLanguages } from '../assets/supportedLanguages';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
 import { logoText } from './logoText';
@@ -25,7 +26,22 @@ const Header = () => {
 					})
 				}
 			</div>
-	)
+		)
+	}
+
+	const showLanguages = () => {
+		return (
+			<select className="header_languages-dropdown">
+				{supportedLanguages.map(supportedLang => {
+					const { langShort } = supportedLang;
+						if (langShort === 'EN') {
+							return <option hidden>{langShort}</option>
+						} else {
+							return <option>{langShort}</option>
+						}
+				})}
+			</select>
+		)
 	}
 
 	return (
@@ -41,7 +57,8 @@ const Header = () => {
 				<div className="header-menu">
 					{showLinks()}
 					<div className="header-menu_btns">
-						<Button name="Заявка" url="/order" />
+						{showLanguages()}
+						{/* <Button name="Заявка" url="/order" /> */}
 						<Button name="Войти" url="/login" />
 					</div>
 				</div>
