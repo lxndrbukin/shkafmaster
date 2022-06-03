@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const passport = require("passport");
+const session = require("express-session");
 
 require('./models/User');
 require('./models/Order');
+require('./services/passport');
 
 mongoose.connect("mongodb+srv://alexbukin:REa96TSu@shkafmaster.2bfok.mongodb.net/shkafmaster?retryWrites=true&w=majority", {
   useNewUrlParser: true,
@@ -15,6 +17,18 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./routes/authRoutes')(app);
 require('./routes/userRoutes')(app);
 require('./routes/orderRoutes')(app);
 

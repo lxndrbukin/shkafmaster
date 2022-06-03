@@ -5,19 +5,28 @@ import { socialsLogin } from './socialsLogin';
 import { Input } from './Input';
 
 class Auth extends React.Component {
+	state = {
+		auth: ''
+	}
+
 	render() {
 		return (
-			<form action="/api/users" method="post" className="form">
+			<form className="form">
 				{/* <Input type="text" label="Имя пользователя" name="login" />
 				<Input type="password" label="Пароль" name="password" /> */}
 				<div className="auth-buttons">
 					{/* <input type="submit" value="Войти" className="form-button" /> */}
 					{socialsLogin.map(socialButton => {
 						return (
-							<button type="submit" style={{backgroundColor: socialButton.color}} className="form-button social">
+							<a 
+								href={`/auth/${socialButton.name.toLocaleLowerCase()}`} 
+								style={{backgroundColor: socialButton.color}} 
+								className="form-button social"
+								onClick={() => this.setState({auth: socialButton.name.toLocaleLowerCase()})}
+							>
 								<i className={socialButton.icon}></i>
 								<span>Войти через {socialButton.name}</span>
-							</button>
+							</a>
 						)
 					})}
 				</div>
