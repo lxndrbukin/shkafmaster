@@ -1,0 +1,72 @@
+[
+  {
+    "steps": [
+      {
+        "header": {
+          "ru": "Заявка",
+          "ro": "Comanda"
+        },
+        "text": {
+          "ru": "Заявка на сайте или по телефону",
+          "ro": "Comanda online sau telefonic"
+        },
+        "icon": "./imgs/delivery/smartphone.png"
+      },
+      {
+        "header": {
+          "ru": "Замеры",
+          "ro": "Măsurători"
+        },
+        "text": {
+          "ru": "Выезд специалиста на замер мебели",
+          "ro": "Plecarea unui specialist la masurarea mobilierului"
+        },
+        "icon": "../imgs/delivery/tape-measure.png"
+      },
+      {
+        "header": {
+          "ru": "Контракт",
+          "ro": "Contract"
+        },
+        "text": {
+          "ru": "Подписание контракта",
+          "ro": "Semnarea contractului"
+        },
+        "icon": "../imgs/delivery/agreement.png"
+      },
+      {
+        "header": {
+          "ru": "Изготовление",
+          "ro": "Fabricarea"
+        },
+        "text": {
+          "ru": "Изготовление продукта",
+          "ro": "Fabricarea produsului"
+        },
+        "icon": "../imgs/delivery/wardrobe.png"
+      },
+      {
+        "header": {
+          "ru": "Доставка",
+          "ro": "Livrare"
+        },
+        "text": {
+          "ru": "Транспортировка мебели и материалов",
+          "ro": "Transport mobila si materiale"
+        },
+        "icon": "../imgs/delivery/fast-delivery.png"
+      },
+      {
+        "header": {
+          "ru": "Установка",
+          "ro": "Instalare"
+        },
+        "text": {
+          "ru": "Сборка и монтаж мебели",
+          "ro": "Montaj mobilier"
+        },
+        "icon": "../imgs/delivery/drill.png"
+      }
+    ]
+  }
+]

@@ -1,21 +1,23 @@
 import React from 'react';
 import './Delivery.scss';
+import { lang } from '../assets/Languages/language';
+import deliveryLocalization from '../assets/Languages/deliveryLocalization.json';
 import { deliverySteps, deliveryHeaders } from './deliverySteps';
 
 const Delivery = ({ height, openSteps }) => {
   const showSteps = () => {
-    return deliverySteps.map((step, idx) => {
+    return deliveryLocalization[0].steps.map((step, idx) => {
       return (
         <div key={idx} className="delivery_step">
           <div className="delivery_step-img">
-            <img alt={step.name} src={step.icon} />
+            <img alt={step.header[lang]} src={step.icon} />
           </div>
           <div className="delivery_step-info">
             <div className="delivery_step-header">
-              {step.name.ru}
+              {step.header[lang]}
             </div>
             <div className="delivery_step-text">
-              {step.text.ru}
+              {step.text[lang]}
             </div>
           </div>
         </div>
