@@ -3,6 +3,7 @@ import './Header.scss';
 import { supportedLanguages } from '../assets/supportedLanguages';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
+import * as headerLocalization from './headerLocalization.json';
 import { logoText, linksList, authButton, orderButton } from './headerLinks';
 import { Button } from '../assets/Button/Button';
 
@@ -36,9 +37,9 @@ const Header = () => {
 			<select 
 				className="header_languages-dropdown"
 				onChange={(e) => {
+					window.location.reload();
 					localStorage.setItem('language', e.target.value.toLowerCase());
 					setLang(localStorage.getItem('language'));
-					window.location.reload();
 				}}
 			>
 				{supportedLanguages.map(supportedLang => {
