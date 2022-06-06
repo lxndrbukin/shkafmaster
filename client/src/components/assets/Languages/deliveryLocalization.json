@@ -68,5 +68,12 @@
         "icon": "../imgs/delivery/drill.png"
       }
     ]
+  },
+  {
+    "header": {
+      "ru": "Как мы работаем",
+      "ro": "Cum noi lucrăm",
+      "en": "How we work"
+    }
   }
 ]

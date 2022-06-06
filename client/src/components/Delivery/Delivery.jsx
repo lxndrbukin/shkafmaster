@@ -29,7 +29,7 @@ const Delivery = ({ height, openSteps }) => {
     <div className="delivery_wrapper">
       <div onClick={() => openSteps()} className="delivery-header-wrapper">
         <div className="delivery-header">
-            <span>Как мы работаем</span>
+            <span>{ deliveryLocalization[1].header[lang] }</span>
           <div className="delivery-header-chevron">
             <i 
               style={height !== 0 ? {transform: 'rotate(180deg)', top: '5px'} : {transform: 'rotate(0deg)'} } 

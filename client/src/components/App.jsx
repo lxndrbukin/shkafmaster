@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import MainPage from './Pages/MainPage';
 import OrderPage from './Pages/OrderPage';
+import NewItem from './Forms/NewItem';
 import Socials from './Socials/Socials';
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
 							<Route path="/" element={<MainPage />} />
 							<Route path="/login" element={<AuthPage />} />
 							<Route path="/order" element={<OrderPage />} />
+							<Route path="/new-item" element={<NewItem />} />
 						</Routes>
 						{/* <Socials /> */}
 					</div>
