@@ -3,7 +3,7 @@ import './Header.scss';
 import { supportedLanguages } from '../assets/supportedLanguages';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
-import { logoText, linksList, authButton } from './headerLinks';
+import { logoText, linksList, authButton, orderButton } from './headerLinks';
 import { Button } from '../assets/Button/Button';
 
 const Header = () => {
@@ -38,6 +38,7 @@ const Header = () => {
 				onChange={(e) => {
 					localStorage.setItem('language', e.target.value.toLowerCase());
 					setLang(localStorage.getItem('language'));
+					window.location.reload();
 				}}
 			>
 				{supportedLanguages.map(supportedLang => {
@@ -64,11 +65,11 @@ const Header = () => {
 				</NavLink>
 				<div className="header-menu">
 					{showLinks()}
-					<div className="header-menu_btns">
-						{showLanguages()}
-						<Button name="Заявка" url="/order" />
-						<Button name={authButton.name[lang]} url={authButton.path} />
-					</div>
+				</div>
+				<div className="header-menu_btns">
+					<Button name={orderButton.name[lang]} url="/order" />
+					<Button name={authButton.name[lang]} url={authButton.path} />
+					{showLanguages()}
 				</div>
 			</div>
 			<div className="header-lower-bar">

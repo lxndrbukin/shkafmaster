@@ -25,9 +25,16 @@ export const linksList = [
 export const authButton = {
 	name: {
 		ru: 'Войти',
-		ro: 'Autentificare'
+		ro: 'Intră'
 	},
 	path: '/login'
+}
+
+export const orderButton = {
+	name: {
+		ru: 'Заявка',
+		ro: 'A comanda'
+	}
 }
 
 export const logoText = 
