@@ -3,12 +3,13 @@ import './Header.scss';
 import { supportedLanguages } from '../assets/supportedLanguages';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
-import { logoText } from './logoText';
-import { linksList } from './linksList';
+import { logoText, linksList, authButton } from './headerLinks';
 import { Button } from '../assets/Button/Button';
 
 const Header = () => {
+	const language = localStorage.getItem('language');
 	const [barHeight, setHeight] = useState(0);
+	const [lang, setLang] = useState(language ? language : 'ro');
 	const openSteps = () => {
 		barHeight === 0 ? setHeight('242px') : setHeight(0);
 	}
@@ -20,7 +21,7 @@ const Header = () => {
 					linksList.map((link, idx) => {
 						return (
 							<NavLink key={idx} to={link.path}>
-								<span>{link.name.ru}</span>
+								<span>{link.name[lang]}</span>
 							</NavLink>
 						)
 					})
@@ -30,14 +31,21 @@ const Header = () => {
 	}
 
 	const showLanguages = () => {
+		const language = localStorage.getItem('language');
 		return (
-			<select className="header_languages-dropdown">
+			<select 
+				className="header_languages-dropdown"
+				onChange={(e) => {
+					localStorage.setItem('language', e.target.value.toLowerCase());
+					setLang(localStorage.getItem('language'));
+				}}
+			>
 				{supportedLanguages.map(supportedLang => {
 					const { langShort } = supportedLang;
 						if (langShort === 'EN') {
-							return <option hidden>{langShort}</option>
+							return <option selected={language === langShort.toLowerCase() ? true : ''} hidden>{langShort}</option>
 						} else {
-							return <option>{langShort}</option>
+							return <option selected={language === langShort.toLowerCase() ? true : ''}>{langShort}</option>
 						}
 				})}
 			</select>
@@ -50,16 +58,16 @@ const Header = () => {
 				<NavLink to="/" className="header-logo">
 					<span className="header-logo_main">SHKAFMASTER</span>
 					<div className="header-logo_secondary">
-						<span>{logoText.firstLine.ru}</span>
-						<span>{logoText.secondLine.ru}</span>
+						<span>{logoText.firstLine[lang]}</span>
+						<span>{logoText.secondLine[lang]}</span>
 					</div>
 				</NavLink>
 				<div className="header-menu">
 					{showLinks()}
 					<div className="header-menu_btns">
 						{showLanguages()}
-						{/* <Button name="Заявка" url="/order" /> */}
-						<Button name="Войти" url="/login" />
+						<Button name="Заявка" url="/order" />
+						<Button name={authButton.name[lang]} url={authButton.path} />
 					</div>
 				</div>
 			</div>
