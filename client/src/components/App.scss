@@ -8,6 +8,12 @@ body {
 	a {
 		text-decoration: none;
 	}
+
+	select {
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
 .block-header {

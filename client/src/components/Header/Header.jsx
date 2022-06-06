@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.scss';
-import { supportedLanguages } from '../assets/supportedLanguages';
+import { supportedLanguages } from '../assets/Languages/supportedLanguages';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
 import headerLocalization from '../assets/Languages/headerLocalization.json';
@@ -40,12 +40,13 @@ const Header = () => {
 				}}
 			>
 				{
-					supportedLanguages.map(supportedLang => {
+					supportedLanguages.map((supportedLang, idx) => {
 						const { langShort } = supportedLang;
 						return (
 							<option 
+								key={ idx }
 								selected={ language === langShort.toLowerCase() ? true : '' }
-								hidden={ langShort === 'EN' ? true : '' }
+								// hidden={ langShort === 'EN' ? true : '' }
 							>
 								{ langShort }
 							</option>

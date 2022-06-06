@@ -1,5 +1,7 @@
 import React from 'react';
 import Auth from '../Forms/Auth';
+import { lang } from '../assets/Languages/language';
+import authLocalization from '../assets/Languages/authLocalization.json';
 import NewAuth from '../Forms/NewAuth';
 
 class AuthPage extends React.Component {
@@ -8,7 +10,7 @@ class AuthPage extends React.Component {
 			<div className="auth-forms">
 				<div className="auth-section">
 					<div className="auth-section_header">
-						Войти в систему
+						{ authLocalization[2].authHeader[lang] }
 					</div>
 					<Auth />
 				</div>

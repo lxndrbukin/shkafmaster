@@ -1,14 +1,11 @@
 import React from 'react';
 import './Auth.scss';
 import '../assets/Form.scss';
-import { socialsLogin } from './socialsLogin';
+import { lang } from '../assets/Languages/language';
+import authLocalization from '../assets/Languages/authLocalization.json';
 import { Input } from './Input';
 
 class Auth extends React.Component {
-	state = {
-		auth: ''
-	}
-
 	render() {
 		return (
 			<form className="form">
@@ -16,20 +13,21 @@ class Auth extends React.Component {
 				<Input type="password" label="Пароль" name="password" /> */}
 				<div className="auth-buttons">
 					{/* <input type="submit" value="Войти" className="form-button" /> */}
-					{socialsLogin.map(socialButton => {
-						const { color, name, disabled, icon } = socialButton;
-						return (
-							<a 
-								href={`/auth/${name.toLocaleLowerCase()}`}  
-								style={{backgroundColor: color}} 
-								className={`form-button social ${disabled ? `disabled` : ''}`}
-								onClick={() => this.setState({auth: name.toLocaleLowerCase()})}
-							>
-								<i className={icon}></i>
-								<span>Войти через {name}</span>
-							</a>
-						)
-					})}
+					{
+						authLocalization[0].authButtons.map(authButton => {
+							return (
+								<a 
+									href={ `/auth/${authButton.name.toLocaleLowerCase()}` }  
+									style={ {backgroundColor: authButton.color} } 
+									className={ `form-button social ${authButton.disabled === true ? `disabled` : ''}` }
+									onClick={ () => this.setState({auth: authButton.name.toLocaleLowerCase()}) }
+								>
+									<i className={ authButton.icon }></i>
+									<span>{ authLocalization[1].text[lang] } { authButton.name }</span>
+								</a>
+							)
+						})
+					}
 				</div>
 			</form>
 		)

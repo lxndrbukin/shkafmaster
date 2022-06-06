@@ -16,8 +16,8 @@ const Footer = () => {
 					<div className="footer-links">
 						<ul>
 							{
-								footerLocalization.linksList.map(link => {
-									return <li><NavLink to={ link.pathname }>{ link.name[lang] }</NavLink></li>
+								footerLocalization.linksList.map((link, idx) => {
+									return <li key={ idx }><NavLink to={ link.pathname }>{ link.name[lang] }</NavLink></li>
 								})
 							}
 						</ul>
