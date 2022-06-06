@@ -3,14 +3,12 @@ import './Header.scss';
 import { supportedLanguages } from '../assets/supportedLanguages';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
-import * as headerLocalization from './headerLocalization.json';
-import { logoText, linksList, authButton, orderButton } from './headerLinks';
+import headerLocalization from '../assets/Languages/headerLocalization.json';
+import { lang } from '../assets/Languages/language';
 import { Button } from '../assets/Button/Button';
 
 const Header = () => {
-	const language = localStorage.getItem('language');
 	const [barHeight, setHeight] = useState(0);
-	const [lang, setLang] = useState(language ? language : 'ro');
 	const openSteps = () => {
 		barHeight === 0 ? setHeight('242px') : setHeight(0);
 	}
@@ -19,10 +17,10 @@ const Header = () => {
 		return (
 			<div className="header-links">
 				{
-					linksList.map((link, idx) => {
+					headerLocalization.linksList.map((link, idx) => {
 						return (
-							<NavLink key={idx} to={link.path}>
-								<span>{link.name[lang]}</span>
+							<NavLink key={ idx } to={ link.pathname }>
+								<span>{ link.name[lang] }</span>
 							</NavLink>
 						)
 					})
@@ -39,17 +37,21 @@ const Header = () => {
 				onChange={(e) => {
 					window.location.reload();
 					localStorage.setItem('language', e.target.value.toLowerCase());
-					setLang(localStorage.getItem('language'));
 				}}
 			>
-				{supportedLanguages.map(supportedLang => {
-					const { langShort } = supportedLang;
-						if (langShort === 'EN') {
-							return <option selected={language === langShort.toLowerCase() ? true : ''} hidden>{langShort}</option>
-						} else {
-							return <option selected={language === langShort.toLowerCase() ? true : ''}>{langShort}</option>
-						}
-				})}
+				{
+					supportedLanguages.map(supportedLang => {
+						const { langShort } = supportedLang;
+						return (
+							<option 
+								selected={ language === langShort.toLowerCase() ? true : '' }
+								hidden={ langShort === 'EN' ? true : '' }
+							>
+								{ langShort }
+							</option>
+						)
+					})
+				}
 			</select>
 		)
 	}
@@ -60,21 +62,21 @@ const Header = () => {
 				<NavLink to="/" className="header-logo">
 					<span className="header-logo_main">SHKAFMASTER</span>
 					<div className="header-logo_secondary">
-						<span>{logoText.firstLine[lang]}</span>
-						<span>{logoText.secondLine[lang]}</span>
+						<span>{ headerLocalization.logoText.firstLine[lang] }</span>
+						<span>{ headerLocalization.logoText.secondLine[lang] }</span>
 					</div>
 				</NavLink>
 				<div className="header-menu">
 					{showLinks()}
 				</div>
 				<div className="header-menu_btns">
-					<Button name={orderButton.name[lang]} url="/order" />
-					<Button name={authButton.name[lang]} url={authButton.path} />
+					<Button name={ headerLocalization.orderButton.name[lang] } url={ headerLocalization.orderButton.pathname } />
+					<Button name={ headerLocalization.authButton.name[lang] } url={ headerLocalization.authButton.pathname } />
 					{showLanguages()}
 				</div>
 			</div>
 			<div className="header-lower-bar">
-				<Delivery openSteps={openSteps} height={barHeight} />
+				<Delivery openSteps={ openSteps } height={ barHeight } />
 			</div>
 		</div>
 	)

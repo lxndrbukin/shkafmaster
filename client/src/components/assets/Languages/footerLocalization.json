@@ -1,0 +1,28 @@
+{
+  "linksList": [
+    {
+      "name": {
+        "ru": "Предложения",
+        "ro": "Oferte",
+        "en": "Offers"
+      },
+      "pathname": "/offers"
+    },
+    {
+      "name": {
+        "ru": "Контакты",
+        "ro": "Contacte",
+        "en": "Contact us"
+      },
+      "pathname": "/contact"
+    },
+    {
+      "name": {
+        "ru": "Помощь",
+        "ro": "Suport",
+        "en": "Help"
+      },
+      "pathname": "/help"
+    }
+  ]
+}

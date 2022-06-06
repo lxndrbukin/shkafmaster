@@ -1,0 +1,56 @@
+{
+  "linksList": [
+    {
+      "name": {
+        "ru": "Главная страница",
+        "ro": "Pagina principală",
+        "en": "Homepage"
+      },
+      "pathname": "/"
+    },
+    {
+      "name": {
+        "ru": "О нас",
+        "ro": "Despre noi",
+        "en": "About us"
+      },
+      "pathname": "/about"
+    },
+    {
+      "name": {
+        "ru": "Контакты",
+        "ro": "Contacte",
+        "en": "Contact us"
+      },
+      "pathname": "/contact"
+    }
+  ],
+  "authButton": {
+    "name": {
+      "ru": "Войти",
+      "ro": "Intră",
+      "en": "Log In"
+    },
+    "pathname": "/login"
+  },
+  "orderButton": {
+    "name": {
+      "ru": "Заявка",
+      "ro": "A comanda",
+      "en": "Order"
+    },
+    "pathname": "/order"
+  },
+  "logoText": {
+    "firstLine": {
+      "ru": "Мебель на заказ",
+      "ro": "Mobila la comanda",
+      "en": "Custom furniture"
+    },
+    "secondLine": {
+      "ru": "Заказывайте у нас",
+      "ro": "Comanda de la noi",
+      "en": "Best quality here"
+    }
+  }
+}

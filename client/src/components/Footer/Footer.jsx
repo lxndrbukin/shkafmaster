@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { socials } from './footerSocials';
+import { lang } from '../assets/Languages/language';
+import footerLocalization from '../assets/Languages/footerLocalization.json'
 import './Footer.scss';
 
 const Footer = () => {
@@ -13,9 +15,11 @@ const Footer = () => {
 				<div className="footer-section">
 					<div className="footer-links">
 						<ul>
-							<li><NavLink to="/offers">Предложения</NavLink></li>
-							<li><NavLink to="/contacts">Контакты</NavLink></li>
-							<li><NavLink to="/help">Помощь</NavLink></li>
+							{
+								footerLocalization.linksList.map(link => {
+									return <li><NavLink to={ link.pathname }>{ link.name[lang] }</NavLink></li>
+								})
+							}
 						</ul>
 					</div>
 					<div className="footer-contacts">
