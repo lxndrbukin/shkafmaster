@@ -12,13 +12,12 @@ module.exports = app => {
 	);
 
 	app.get('/auth/facebook',
-  	passport.authenticate('facebook')
+  	passport.authenticate('facebook', { scope: ['user_friends'] })
 	);
 
 	app.get('/auth/facebook/callback',
-		passport.authenticate('facebook', { failureRedirect: '/login' }),
-			function(req, res) {
-				res.redirect('/');
-  		}
+		passport.authenticate('facebook'), (req, res) => {
+			res.redirect('/');
+		}
 	);
 }

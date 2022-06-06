@@ -29,8 +29,8 @@
 				position: relative;
 
 				i {
-					font-size: 25px;
-					margin: 6.25px 10px;
+					font-size: 26px;
+					margin: 7.5px 10px;
 					position: absolute;
 				}
 
@@ -39,16 +39,9 @@
 				}
 			}
 
-			.google {
-				background-color: #4285f4;
-			}
-
-			.facebook {
-				background-color: #4267b2;
-			}
-
-			.vk {
-				background-color: #0077ff;
+			.disabled {
+				background-color: gray !important;
+				cursor: not-allowed;
 			}
 		}
 	}

@@ -17,15 +17,16 @@ class Auth extends React.Component {
 				<div className="auth-buttons">
 					{/* <input type="submit" value="Войти" className="form-button" /> */}
 					{socialsLogin.map(socialButton => {
+						const { color, name, disabled, icon } = socialButton;
 						return (
 							<a 
-								href={`/auth/${socialButton.name.toLocaleLowerCase()}`} 
-								style={{backgroundColor: socialButton.color}} 
-								className="form-button social"
-								onClick={() => this.setState({auth: socialButton.name.toLocaleLowerCase()})}
+								href={`/auth/${name.toLocaleLowerCase()}`}  
+								style={{backgroundColor: color}} 
+								className={`form-button social ${disabled ? `disabled` : ''}`}
+								onClick={() => this.setState({auth: name.toLocaleLowerCase()})}
 							>
-								<i className={socialButton.icon}></i>
-								<span>Войти через {socialButton.name}</span>
+								<i className={icon}></i>
+								<span>Войти через {name}</span>
 							</a>
 						)
 					})}
