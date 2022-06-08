@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { lang } from './assets/Languages/language';
 import AuthPage from './Pages/AuthPage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -11,6 +12,7 @@ import Socials from './Socials/Socials';
 
 class App extends React.Component {
 	render() {
+		// this.onLoad();
 		return (
 			<div className="component-wrapper">
 				<Router>
@@ -18,7 +20,7 @@ class App extends React.Component {
 					<div className="container">
 						<Routes>
 							<Route path="/" element={<MainPage />} />
-							<Route path="/login" element={<AuthPage />} />
+							<Route path="/login" exact element={<AuthPage />} />
 							<Route path="/order" element={<OrderPage />} />
 							<Route path="/new-item" element={<NewItem />} />
 						</Routes>

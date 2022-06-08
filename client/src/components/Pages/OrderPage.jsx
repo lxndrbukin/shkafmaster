@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderForm from '../Forms/OrderForm';
 import {connect} from 'react-redux';
-import { makeOrder } from '../../actions';
+import { makeOrder, fetchOrders } from '../../actions';
 
 class OrderPage extends React.Component {
 	onSubmit = (formValues) => {
@@ -9,6 +9,7 @@ class OrderPage extends React.Component {
 	}
 
 	render() {
+		this.props.fetchOrders();
 		return (
 			<div className="order-form-container">
 				<div className="order-form-header">
@@ -20,4 +21,4 @@ class OrderPage extends React.Component {
 	}
 }
 
-export default connect(null, { makeOrder })(OrderPage);
+export default connect(null, { makeOrder, fetchOrders })(OrderPage);

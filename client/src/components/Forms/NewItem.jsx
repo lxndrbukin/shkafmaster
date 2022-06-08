@@ -10,9 +10,9 @@ class NewItem extends React.Component {
   render() {
     return (
       <form className="form">
-        <Field component={Input} name="itemName" label="Item Name" />
-        <Field component={Select} options={this.categories()} type="text" name="itemType" label="Item Type" />
-        <Field component={Textarea} type="text" name="itemDescr" label="Item Description" />
+        <Field component={ Input } name="itemName" label="Item Name" />
+        <Field component={ Select } options={ this.categories() } type="text" name="itemType" label="Item Type" />
+        <Field component={ Textarea } type="text" name="itemDescr" label="Item Description" />
         <input type="submit" value="Submit" className="form-button" />
       </form>
     )

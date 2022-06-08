@@ -3,9 +3,9 @@ const Order = mongoose.model('orders');
 
 module.exports = app => {
   app.get('/api/orders', async (req, res) => {
-		await Order.find({}, (err, order) => {
-			res.send(order);
-		})
+		await Order.find({}, (err, orders) => {
+			res.send(orders);
+		}).clone();
 	});
 
 	app.post('/api/orders', async (req, res) => {
@@ -24,5 +24,6 @@ module.exports = app => {
 		console.log(order);
 		order.save();
 		res.send(order);
+		res.redirect('/');
 	});
 }

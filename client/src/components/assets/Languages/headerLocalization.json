@@ -36,7 +36,7 @@
   "orderButton": {
     "name": {
       "ru": "Заявка",
-      "ro": "A comanda",
+      "ro": "Comanda",
       "en": "Order"
     },
     "pathname": "/order"

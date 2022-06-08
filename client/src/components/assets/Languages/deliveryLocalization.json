@@ -9,8 +9,7 @@
         "text": {
           "ru": "Заявка на сайте или по телефону",
           "ro": "Comanda online sau telefonic"
-        },
-        "icon": "./imgs/delivery/smartphone.png"
+        }
       },
       {
         "header": {
@@ -20,8 +19,7 @@
         "text": {
           "ru": "Выезд специалиста на замер мебели",
           "ro": "Plecarea unui specialist la masurarea mobilierului"
-        },
-        "icon": "../imgs/delivery/tape-measure.png"
+        }
       },
       {
         "header": {
@@ -31,8 +29,7 @@
         "text": {
           "ru": "Подписание контракта",
           "ro": "Semnarea contractului"
-        },
-        "icon": "../imgs/delivery/agreement.png"
+        }
       },
       {
         "header": {
@@ -42,8 +39,7 @@
         "text": {
           "ru": "Изготовление продукта",
           "ro": "Fabricarea produsului"
-        },
-        "icon": "../imgs/delivery/wardrobe.png"
+        }
       },
       {
         "header": {
@@ -53,8 +49,7 @@
         "text": {
           "ru": "Транспортировка мебели и материалов",
           "ro": "Transport mobila si materiale"
-        },
-        "icon": "../imgs/delivery/fast-delivery.png"
+        }
       },
       {
         "header": {
@@ -64,8 +59,7 @@
         "text": {
           "ru": "Сборка и монтаж мебели",
           "ro": "Montaj mobilier"
-        },
-        "icon": "../imgs/delivery/drill.png"
+        }
       }
     ]
   },
