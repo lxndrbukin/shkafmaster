@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const Order = mongoose.model('orders');
 
 module.exports = app => {
+
   app.get('/api/orders', async (req, res) => {
 		await Order.find({}, (err, orders) => {
+			console.log(orders);
 			res.send(orders);
 		}).clone();
 	});
@@ -21,9 +23,7 @@ module.exports = app => {
 			console.log('empty order');
 			return;
 		}
-		console.log(order);
 		order.save();
 		res.send(order);
-		res.redirect('/');
 	});
 }

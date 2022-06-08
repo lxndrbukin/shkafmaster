@@ -2,17 +2,18 @@ import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { lang } from './assets/Languages/language';
+import { connect } from 'react-redux';
 import AuthPage from './Pages/AuthPage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import MainPage from './Pages/MainPage';
-import OrderPage from './Pages/OrderPage';
+import OrdersPage from './Orders/OrdersPage';
+import OrderForm from './Forms/OrderForm';
 import NewItem from './Forms/NewItem';
 import Socials from './Socials/Socials';
 
 class App extends React.Component {
 	render() {
-		// this.onLoad();
 		return (
 			<div className="component-wrapper">
 				<Router>
@@ -21,7 +22,8 @@ class App extends React.Component {
 						<Routes>
 							<Route path="/" element={<MainPage />} />
 							<Route path="/login" exact element={<AuthPage />} />
-							<Route path="/order" element={<OrderPage />} />
+							<Route path="/order" element={<OrderForm />} />
+							<Route path="/orders" element={<OrdersPage />} />
 							<Route path="/new-item" element={<NewItem />} />
 						</Routes>
 						{/* <Socials /> */}
