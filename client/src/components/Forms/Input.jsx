@@ -24,9 +24,11 @@ export const Select = ({ label, name, input, options }) => {
 				name={name}
 				{...input}
 			>
-				{options.map(option => {
-					return <option>{option}</option>
-				})}
+				{
+					options.map((option, idx) => {
+						return <option key={idx}>{option}</option>
+					})
+				}
 			</select>
 		</div>
 	)

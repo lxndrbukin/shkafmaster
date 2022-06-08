@@ -1,0 +1,40 @@
+@import '../assets/variables.scss';
+
+.orders-list {
+  gap: 15px;
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+
+  .order {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: $main-box-shadow;
+    height: fit-content;
+    min-height: 200px;
+
+    // &:before,
+    // &:after {
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   top: 70px;
+    //   width: 20px;
+    //   height: 20px;
+    //   border-radius: 50%;
+    //   z-index: 3;
+    //   background-color: $main-background-color;
+    // }
+
+    // &:before {
+    //   left: -10px;
+    // }
+
+    // &:after {
+    //   right: -10px;
+    // }
+  }
+}

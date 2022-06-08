@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Order = mongoose.model('orders');
 
 module.exports = app => {
-
   app.get('/api/orders', async (req, res) => {
 		await Order.find({}, (err, orders) => {
 			console.log(orders);

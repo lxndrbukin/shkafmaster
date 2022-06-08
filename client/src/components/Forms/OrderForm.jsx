@@ -13,9 +13,9 @@ class OrderForm extends React.Component {
 	}
 
 	onSubmit = (formValues) => {
-		console.log(formValues);
-		this.props.onSubmit(formValues);
+		this.props.makeOrder(formValues);
 	}
+	
 	render() {
 		return (
 			<div className="order-form-container">
