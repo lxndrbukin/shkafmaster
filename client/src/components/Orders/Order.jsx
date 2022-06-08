@@ -8,7 +8,9 @@ const Order = ({ name, phone, item, comment }) => {
           {name}
         </div>
         <div className="order_customer-phone">
-          {phone}
+          <i className="fab fa-viber"></i> 
+          <i className="fab fa-telegram"></i> 
+          <i className="fab fa-whatsapp"></i> {phone}
         </div>
       </div>
       <div className="order_body">

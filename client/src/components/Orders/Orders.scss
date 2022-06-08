@@ -11,10 +11,38 @@
     width: 100%;
     margin: auto;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: $main-box-shadow;
     height: fit-content;
     min-height: 200px;
+    overflow: hidden;
+
+    .order_header {
+      display: flex;
+      justify-content: space-between;
+      background-color: $main-color;
+      color: $main-background-color;
+      padding: 10px;
+      
+
+      .order_customer-name {
+        
+      }
+
+      .order_customer-phone {
+        
+      }
+    }
+
+    .order_body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      .order_comment {
+        padding: 10px;
+      }
+    }
 
     // &:before,
     // &:after {
