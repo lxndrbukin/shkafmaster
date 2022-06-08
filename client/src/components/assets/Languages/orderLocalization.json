@@ -1,0 +1,34 @@
+{
+  "orderForm": {
+    "header": {
+      "ru": "Заказ",
+      "ro": "Comanda",
+      "en": "Order"
+    },
+    "name": {
+      "ru": "Имя",
+      "ro": "Numele",
+      "en": "Name"
+    },
+    "phoneNumber": {
+      "ru": "Мобильный телефон",
+      "ro": "Telefon mobil",
+      "en": "Mobile phone number"
+    },
+    "itemType": {
+      "ru": "Тип товара",
+      "ro": "Tipul de produs",
+      "en": "Item type"
+    },
+    "comments": {
+      "ru": "Комментарии",
+      "ro": "Comentarii",
+      "en": "Comments"
+    },
+    "orderButton": {
+      "ru": "Заказать",
+      "ro": "Comanda",
+      "en": "Order"
+    }
+  }
+}
