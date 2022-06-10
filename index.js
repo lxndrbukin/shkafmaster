@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const bodyParser = require("body-parser");
 const passport = require('passport');
 const keys = require('./services/keys');
 const session = require('express-session');
@@ -18,6 +20,15 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(bodyParser.json());
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  })
+);
+
 app.set('trust proxy', 1);
 app.use(session({
   secret: 'keyboard cat',

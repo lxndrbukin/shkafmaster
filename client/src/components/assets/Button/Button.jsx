@@ -14,3 +14,16 @@ export const Button = ({ name, url, borderColor, bgColor }) => {
 		</NavLink>
 	)
 }
+
+export const ExternalButton = ({ name, url, borderColor, bgColor }) => {
+	return (
+		<a href={url}>
+			<button 
+				className="btn"
+				style={{borderColor: borderColor, backgroundColor: bgColor}}
+			>
+				{name}
+			</button>
+		</a>
+	)
+}

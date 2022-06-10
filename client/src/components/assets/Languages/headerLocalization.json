@@ -41,6 +41,14 @@
     },
     "pathname": "/order"
   },
+  "logoutButton": {
+    "name": {
+      "ru": "Выйти",
+      "ro": "Ieșire",
+      "en": "Log out"
+    },
+    "pathname": "/api/logout"
+  },
   "logoText": {
     "firstLine": {
       "ru": "Мебель на заказ",

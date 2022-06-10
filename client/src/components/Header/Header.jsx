@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.scss';
 import { supportedLanguages } from '../assets/Languages/supportedLanguages';
+import { connect } from 'react-redux';
+import { fetchUser } from '../../actions';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
 import headerLocalization from '../assets/Languages/headerLocalization.json';
 import { lang } from '../assets/Languages/language';
-import { Button } from '../assets/Button/Button';
+import { Button, ExternalButton } from '../assets/Button/Button';
 
-const Header = () => {
+const Header = ({ fetchUser, currentUser }) => {
+	useEffect(() => {
+		fetchUser();
+	});
+
 	const [barHeight, setHeight] = useState(0);
 	const openSteps = () => {
 		barHeight === 0 ? setHeight('242px') : setHeight(0);
@@ -26,6 +32,17 @@ const Header = () => {
 					})
 				}
 			</div>
+		)
+	}
+
+	const showAuthButtons = () => {
+		if (currentUser) {
+			return (
+				<ExternalButton name={ headerLocalization.logoutButton.name[lang] } url={ headerLocalization.logoutButton.pathname } />
+			)
+		}
+		return (
+			<Button name={ headerLocalization.authButton.name[lang] } url={ headerLocalization.authButton.pathname } />
 		)
 	}
 
@@ -72,7 +89,7 @@ const Header = () => {
 				</div>
 				<div className="header-menu_btns">
 					<Button name={ headerLocalization.orderButton.name[lang] } url={ headerLocalization.orderButton.pathname } />
-					<Button name={ headerLocalization.authButton.name[lang] } url={ headerLocalization.authButton.pathname } />
+					{showAuthButtons()}
 					{showLanguages()}
 				</div>
 			</div>
@@ -83,4 +100,10 @@ const Header = () => {
 	)
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+	return {
+		currentUser: state.currentUser
+	}
+}
+
+export default connect(mapStateToProps, { fetchUser })(Header);
