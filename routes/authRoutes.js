@@ -7,9 +7,10 @@ module.exports = (app) => {
     '/auth/google/',
     passport.authenticate('google', { scope: ['profile', 'email'] })
   );
+  
   app.get(
     '/auth',
-    passport.authenticate('local'), (req, res) => {
+    passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
       res.redirect('/');
     }
   );
