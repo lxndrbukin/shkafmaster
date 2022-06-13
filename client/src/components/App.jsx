@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { lang } from './assets/Languages/language';
+import { lang } from './assets/Localization/language';
 import { connect } from 'react-redux';
 import AuthPage from './Pages/AuthPage';
 import Header from './Header/Header';

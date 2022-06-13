@@ -7,6 +7,12 @@ module.exports = (app) => {
     '/auth/google/',
     passport.authenticate('google', { scope: ['profile', 'email'] })
   );
+  app.get(
+    '/auth',
+    passport.authenticate('local'), (req, res) => {
+      res.redirect('/');
+    }
+  );
 
   app.get(
     '/auth/google/callback',
@@ -28,13 +34,4 @@ module.exports = (app) => {
       res.redirect('/');
     }
   );
-
-  app.get('/api/current_user', async (req, res) => {
-    await res.send(req.user);
-  });
-
-  app.get('/api/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-  });
 };

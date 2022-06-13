@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from '../Forms/Auth';
-import { lang } from '../assets/Languages/language';
-import authLocalization from '../assets/Languages/authLocalization.json';
+import { lang } from '../assets/Localization/language';
+import authLocalization from '../assets/Localization/authLocalization.json';
 import NewAuth from '../Forms/NewAuth';
 
 class AuthPage extends React.Component {
@@ -10,11 +10,11 @@ class AuthPage extends React.Component {
 			<div className="auth-forms">
 				<div className="auth-section">
 					<div className="auth-section_header">
-						{ authLocalization[2].authHeader[lang] }
+						{ authLocalization[3].authHeader[lang] }
 					</div>
 					<Auth />
 				</div>
-				{/* <div className="auth-section-separator">
+				<div className="auth-section-separator">
 					<div className="auth-section-separator_icon-wrapper">
 						<div className="auth-section-separator_icon">
 							<i className="fas fa-user"></i>
@@ -23,10 +23,10 @@ class AuthPage extends React.Component {
 				</div>
 				<div className="auth-section">
 					<div className="auth-section_header">
-						Зарегистрироваться
+						{authLocalization[5].registerHeader[lang]}
 					</div>
 					<NewAuth />
-				</div> */}
+				</div>
 			</div>
 		)
 	}

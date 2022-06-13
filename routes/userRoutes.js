@@ -3,6 +3,15 @@ const mongoose = require('mongoose');
 const User = mongoose.model('users');
 
 module.exports = app => {
+  app.get('/api/current_user', async (req, res) => {
+    await res.send(req.user);
+  });
+
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+  });
+
   app.get('/api/users', async (req, res) => {
     await User.find({}, (err, user) => {
       res.send(user[0]);
@@ -11,10 +20,10 @@ module.exports = app => {
 
   app.post('/api/users', async (req, res) => {
     const user = await new User({
-      login: req.body.login,
+      email: req.body.email,
       password: req.body.password
     });
-    if (!user.login) {
+    if (!user.email) {
       res.redirect('/');
       console.log('Nope!');
       return;

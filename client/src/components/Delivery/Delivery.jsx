@@ -1,7 +1,7 @@
 import React from 'react';
 import './Delivery.scss';
-import { lang } from '../assets/Languages/language';
-import deliveryLocalization from '../assets/Languages/deliveryLocalization.json';
+import { lang } from '../assets/Localization/language';
+import deliveryLocalization from '../assets/Localization/deliveryLocalization.json';
 import { deliverySteps, deliveryHeaders } from './deliverySteps';
 
 const Delivery = ({ height, openSteps }) => {

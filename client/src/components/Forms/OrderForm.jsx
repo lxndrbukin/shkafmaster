@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/Form.scss';
-import orderLocalization from '../assets/Languages/orderLocalization.json';
-import { lang } from '../assets/Languages/language';
+import orderLocalization from '../assets/Localization/orderLocalization.json';
+import { lang } from '../assets/Localization/language';
 import { reduxForm, Field } from 'redux-form';
 import { Input, Textarea, Select } from './Input';
 import { connect } from 'react-redux';
@@ -10,13 +10,6 @@ import { makeOrder, fetchUser } from '../../actions';
 class OrderForm extends React.Component {
   componentDidMount() {
     this.props.fetchUser();
-  }
-
-  returnName() {
-    if (!this.props.currentUser) {
-      return 'Nope';
-    }
-    return this.props.currentUser.fullName;
   }
 
   categories = () => {

@@ -14,7 +14,7 @@ require('./services/passport');
 mongoose.connect(keys.mongoDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).catch((error) => console.log(error));
+}).then(() => console.log('CONNECTED TO MONGODB')).catch((error) => console.log(error));
 
 const app = express();
 

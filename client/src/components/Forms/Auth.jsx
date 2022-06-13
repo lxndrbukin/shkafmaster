@@ -1,20 +1,22 @@
 import React from 'react';
 import './Auth.scss';
 import '../assets/Form.scss';
-import { lang } from '../assets/Languages/language';
-import authLocalization from '../assets/Languages/authLocalization.json';
 import { Input } from './Input';
+import { connect } from 'react-redux';
+import { reduxForm, Field } from 'redux-form';
+import { lang } from '../assets/Localization/language';
+import authLocalization from '../assets/Localization/authLocalization.json';
 
 class Auth extends React.Component {
 	render() {
 		return (
-			<form className="form">
-				{/* <Input type="text" label="Имя пользователя" name="login" />
-				<Input type="password" label="Пароль" name="password" /> */}
+			<form className="form" action="/auth" method="post">
+				<Field component={Input} type="text" label={authLocalization[4].authForms.email[lang]} name="email" />
+				<Field component={Input} type="password" label={authLocalization[4].authForms.password[lang]} name="password" />
 				<div className="auth-buttons">
-					{/* <input type="submit" value="Войти" className="form-button" /> */}
+					<input type="submit" value={authLocalization[0].authButtons.login[lang]} className="form-button" />
 					{
-						authLocalization[0].authButtons.map(authButton => {
+						authLocalization[1].socialAuthButtons.map(authButton => {
 							return (
 								<a 
 									href={ `/auth/${authButton.name.toLocaleLowerCase()}` }  
@@ -23,7 +25,7 @@ class Auth extends React.Component {
 									onClick={ () => this.setState({auth: authButton.name.toLocaleLowerCase()}) }
 								>
 									<i className={ authButton.icon }></i>
-									<span>{ authLocalization[1].text[lang] } { authButton.name }</span>
+									<span>{ authLocalization[2].text[lang] } { authButton.name }</span>
 								</a>
 							)
 						})
@@ -34,4 +36,6 @@ class Auth extends React.Component {
 	}
 }
 
-export default Auth;
+const auth = reduxForm({form: 'auth'})(Auth);
+
+export default connect(null)(auth);

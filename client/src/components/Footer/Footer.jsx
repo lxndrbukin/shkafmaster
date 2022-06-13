@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { socials } from './footerSocials';
-import { lang } from '../assets/Languages/language';
-import footerLocalization from '../assets/Languages/footerLocalization.json'
+import { lang } from '../assets/Localization/language';
+import footerLocalization from '../assets/Localization/footerLocalization.json'
 import './Footer.scss';
 
 const Footer = () => {

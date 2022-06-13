@@ -1,8 +1,8 @@
 import React from 'react';
 import OrderForm from '../Forms/OrderForm';
 import { connect } from 'react-redux';
-import { lang } from '../assets/Languages/language';
-import orderLocalization from '../assets/Languages/orderLocalization.json';
+import { lang } from '../assets/Localization/language';
+import orderLocalization from '../assets/Localization/orderLocalization.json';
 import { makeOrder } from '../../actions';
 
 class OrderPage extends React.Component {

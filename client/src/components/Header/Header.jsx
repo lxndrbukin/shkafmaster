@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Header.scss';
-import { supportedLanguages } from '../assets/Languages/supportedLanguages';
+import { supportedLanguages } from '../assets/Localization/supportedLanguages';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions';
 import Delivery from '../Delivery/Delivery';
 import { NavLink } from 'react-router-dom';
-import headerLocalization from '../assets/Languages/headerLocalization.json';
-import { lang } from '../assets/Languages/language';
+import headerLocalization from '../assets/Localization/headerLocalization.json';
+import { lang } from '../assets/Localization/language';
 import { Button, ExternalButton } from '../assets/Button/Button';
 
 const Header = ({ fetchUser, currentUser }) => {
