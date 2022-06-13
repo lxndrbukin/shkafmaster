@@ -8,10 +8,6 @@ import { connect } from 'react-redux';
 import { makeOrder, fetchUser } from '../../actions';
 
 class OrderForm extends React.Component {
-  state = {
-    name: '',
-  };
-
   componentDidMount() {
     this.props.fetchUser();
   }
@@ -81,9 +77,11 @@ const mapStateToProps = (state) => {
     orders: state.orders,
     currentUser: state.currentUser,
     initialValues: {
-      name: '',
+      name: state.currentUser ? state.currentUser.fullName : '',
     },
   };
 };
-const orderForm = reduxForm({ form: 'makeOrder' })(OrderForm);
+const orderForm = reduxForm({ form: 'makeOrder', enableReinitialize: true })(
+  OrderForm
+);
 export default connect(mapStateToProps, { makeOrder, fetchUser })(orderForm);
