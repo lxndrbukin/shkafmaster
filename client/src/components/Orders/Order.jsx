@@ -1,6 +1,19 @@
 import React from 'react';
 
-const Order = ({ name, phone, item, comment }) => {
+const Order = ({ name, phone, item, communications, comment }) => {
+  const communicate = () => {
+    if (communications) {
+      return Object.keys(communications).map((social, idx) => {
+        if (communications[social]) {
+          if (social === 'phonecall') {
+            return <i key={idx} className="fas fa-phone"></i>
+          }
+          return <i key={idx} className={`fab fa-${social}`}></i>
+        }
+      })
+    }
+  }
+
   return (
     <div className="order">
       <div className="order_header">
@@ -8,9 +21,8 @@ const Order = ({ name, phone, item, comment }) => {
           {name}
         </div>
         <div className="order_customer-phone">
-          <i className="fab fa-viber"></i> 
-          <i className="fab fa-telegram"></i> 
-          <i className="fab fa-whatsapp"></i> {phone}
+          {communicate()}
+          {phone}
         </div>
       </div>
       <div className="order_body">

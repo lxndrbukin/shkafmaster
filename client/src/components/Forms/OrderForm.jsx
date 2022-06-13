@@ -57,7 +57,7 @@ class OrderForm extends React.Component {
                   key={idx}
                   component={Checkbox}
                   label={social}
-                  name={social.toLowerCase()}
+                  name={social === 'Phone call' || social === 'Звонок' || social === 'Apel' ? 'phonecall' : social.toLowerCase()}
                 />
               )
             })
@@ -91,6 +91,10 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser,
     initialValues: {
       name: state.currentUser ? state.currentUser.fullName : '',
+      telegram: false,
+      viber: false,
+      whatsapp: false,
+      phonecall: false
     },
   };
 };

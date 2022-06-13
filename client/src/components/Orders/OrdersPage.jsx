@@ -13,13 +13,15 @@ class OrdersPage extends React.Component {
     if (!this.props.orders[0]) {
       return 'Loading';
     }
-    return this.props.orders.map(order => {
+    return this.props.orders.map((order, idx) => {
       return (
         <Order 
-          name={ order.name } 
-          phone={ order.phone } 
-          item={ order.item } 
-          comment={ order.comment } 
+          key={idx}
+          name={order.name} 
+          phone={order.phone} 
+          communications={order.communications}
+          item={order.item} 
+          comment={order.comment} 
         />
       )
     })
