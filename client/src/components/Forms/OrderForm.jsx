@@ -3,7 +3,7 @@ import '../assets/Form.scss';
 import orderLocalization from '../assets/Localization/orderLocalization.json';
 import { lang } from '../assets/Localization/language';
 import { reduxForm, Field } from 'redux-form';
-import { Input, Textarea, Select } from './Input';
+import { Input, Textarea, Select, Checkbox } from './Input';
 import { connect } from 'react-redux';
 import { makeOrder, fetchUser } from '../../actions';
 
@@ -12,13 +12,21 @@ class OrderForm extends React.Component {
     this.props.fetchUser();
   }
 
-  categories = () => {
+  categories() {
     return ['-', 'Шкафы', 'Кухни'];
   };
+
+  orderSocials() {
+    return ['Telegram', 'WhatsApp', 'Viber', orderLocalization.orderForm.orderCallRequest[lang]]
+  }
 
   onSubmit = (formValues) => {
     this.props.makeOrder(formValues);
   };
+
+  checkboxValue() {
+
+  }
 
   render() {
     return (
@@ -42,6 +50,18 @@ class OrderForm extends React.Component {
             label={orderLocalization.orderForm.phoneNumber[lang]}
             name='phone'
           />
+          {
+            this.orderSocials().map((social, idx) => {
+              return (
+                <Field 
+                  key={idx}
+                  component={Checkbox}
+                  label={social}
+                  name={social.toLowerCase()}
+                />
+              )
+            })
+          }
           <Field
             component={Select}
             options={this.categories()}

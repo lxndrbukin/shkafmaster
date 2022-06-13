@@ -29,6 +29,11 @@
       "ru": "Заказать",
       "ro": "Comanda",
       "en": "Order"
+    },
+    "orderCallRequest": {
+      "ru": "Звонок",
+      "ro": "Apel",
+      "en": "Phone call"
     }
   }
 }

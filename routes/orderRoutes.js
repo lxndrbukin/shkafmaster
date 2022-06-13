@@ -14,6 +14,12 @@ module.exports = app => {
 			name: req.body.name,
 			phone: req.body.phone,
 			item: req.body.item,
+			communications: {
+				telegram: req.body.telegram,
+				viber: req.body.viber,
+				whatsapp: req.body.whatsapp,
+				phonecall: req.body.phonecall
+			},
 			comment: req.body.comment
 		});
 		const { name, phone, item, comment } = order;

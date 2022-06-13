@@ -23,6 +23,15 @@ export const Select = ({ label, name, input, options }) => {
   );
 };
 
+export const Checkbox = ({ label, name, value, input }) => {
+  return (
+    <div className='form-checkbox'>
+      <input type='checkbox' name={name} value={value} {...input} />
+      <label>{label}</label>
+    </div>
+  )
+}
+
 export const Textarea = ({ label, name, placeholder, input }) => {
   return (
     <div className='form-textarea'>
