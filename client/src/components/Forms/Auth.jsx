@@ -10,7 +10,7 @@ import authLocalization from '../assets/Localization/authLocalization.json';
 class Auth extends React.Component {
   render() {
     return (
-      <form className='form' action='/auth' method='get'>
+      <form className='form' action='/auth' method='post'>
         <Field
           component={Input}
           type='text'

@@ -68,19 +68,18 @@ passport.use(
 );
 
 passport.use(
-  new LocalStrategy(
-    async (username, password, done) => {
-      console.log(profile);
-      const existingUser = await User.findOne({ email: username });
-      if (existingUser) {
-        return done(null, existingUser);
+  new LocalStrategy(function (username, password, done) {
+    User.findOne({ email: username }, function (err, user) {
+      if (err) {
+        return done(err);
       }
-      const user = await new User({
-        email: req.body.email,
-        password: req.body.password,
-        joinMethod: req.body.joinMethod,
-      }).save();
-      done(null, user);
-    }
-  )
+      if (!user) {
+        return done(null, false);
+      }
+      if (!user.verifyPassword(password)) {
+        return done(null, false);
+      }
+      return done(null, user);
+    });
+  })
 );
