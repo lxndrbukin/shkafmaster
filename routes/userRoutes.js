@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-
+const passport = require('passport');
 const User = mongoose.model('users');
 
-module.exports = app => {
+module.exports = (app) => {
   app.get('/api/current_user', async (req, res) => {
     await res.send(req.user);
   });
@@ -20,10 +20,10 @@ module.exports = app => {
 
   app.post('/api/users', async (req, res) => {
     const user = await new User({
-      email: req.body.email,
-      password: req.body.password
+      username: req.body.username,
+      password: req.body.password,
     });
-    if (!user.email) {
+    if (!user.username) {
       res.redirect('/');
       console.log('Nope!');
       return;
@@ -35,5 +35,5 @@ module.exports = app => {
       user.save();
       res.send(user);
     }
-  })
-}
+  });
+};

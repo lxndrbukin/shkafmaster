@@ -15,7 +15,7 @@ class Auth extends React.Component {
           component={Input}
           type='text'
           label={authLocalization[4].authForms.email[lang]}
-          name='email'
+          name='username'
         />
         <Field
           component={Input}
@@ -31,21 +31,18 @@ class Auth extends React.Component {
           />
           {authLocalization[1].socialAuthButtons.map((authButton) => {
             return (
-              <a
-                href={`/auth/${authButton.name.toLocaleLowerCase()}`}
+              <button
+                type='submit'
                 style={{ backgroundColor: authButton.color }}
                 className={`form-button social ${
                   authButton.disabled === true ? `disabled` : ''
                 }`}
-                onClick={() =>
-                  this.setState({ auth: authButton.name.toLocaleLowerCase() })
-                }
               >
                 <i className={authButton.icon}></i>
                 <span>
                   {authLocalization[2].text[lang]} {authButton.name}
                 </span>
-              </a>
+              </button>
             );
           })}
         </div>

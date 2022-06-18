@@ -4,6 +4,7 @@ import { supportedLanguages } from '../assets/Localization/supportedLanguages';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions';
 import Delivery from '../Delivery/Delivery';
+import MiniProfile from './MiniProfile';
 import { NavLink } from 'react-router-dom';
 import headerLocalization from '../assets/Localization/headerLocalization.json';
 import { lang } from '../assets/Localization/language';
@@ -96,6 +97,7 @@ const Header = ({ fetchUser, currentUser }) => {
             url={headerLocalization.orderButton.pathname}
           />
           {showAuthButtons()}
+          <MiniProfile />
           {showLanguages()}
         </div>
       </div>
