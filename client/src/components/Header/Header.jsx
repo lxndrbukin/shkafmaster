@@ -39,12 +39,7 @@ const Header = ({ fetchUser, currentUser }) => {
 
   const showAuthButtons = () => {
     if (currentUser) {
-      return (
-        <ExternalButton
-          name={headerLocalization.logoutButton.name[lang]}
-          url={headerLocalization.logoutButton.pathname}
-        />
-      );
+      return <MiniProfile />;
     }
     return (
       <Button
@@ -97,7 +92,6 @@ const Header = ({ fetchUser, currentUser }) => {
             url={headerLocalization.orderButton.pathname}
           />
           {showAuthButtons()}
-          <MiniProfile />
           {showLanguages()}
         </div>
       </div>

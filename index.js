@@ -7,9 +7,9 @@ const keys = require('./services/keys');
 const session = require('express-session');
 
 require('./models/User');
+require('./services/passport');
 require('./models/Order');
 require('./models/Item');
-require('./services/passport');
 
 const app = express();
 
@@ -24,18 +24,17 @@ app.use(
   })
 );
 
-app.set('trust proxy', 1);
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(
   session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: { secure: true },
   })
 );
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 mongoose
   .connect(keys.mongoDB, {

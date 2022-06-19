@@ -1,6 +1,5 @@
 const passport = require('passport');
 const mongoose = require('mongoose');
-const req = require('express/lib/request');
 const User = mongoose.model('users');
 
 module.exports = (app) => {
@@ -18,7 +17,7 @@ module.exports = (app) => {
           req,
           res,
           () => {
-            res.redirect('/');
+            return res.send(user);
           }
         );
       }
@@ -37,7 +36,7 @@ module.exports = (app) => {
             req,
             res,
             () => {
-              res.redirect('/');
+              return res.send(user);
             }
           );
         }
@@ -65,4 +64,9 @@ module.exports = (app) => {
       res.redirect('/');
     }
   );
+
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    return res.send('Logged out');
+  });
 };

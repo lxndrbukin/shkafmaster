@@ -8,16 +8,12 @@ const userSchema = new Schema({
   fullName: String,
   email: String,
   username: String,
-  password: String,
   avatar: String,
   joinMethod: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
 
-const User = new mongoose.model('users', userSchema);
+const User = mongoose.model('users', userSchema);
 
 passport.use(User.createStrategy());
-
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());

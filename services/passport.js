@@ -1,20 +1,18 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-const LocalStrategy = require('passport-local').Strategy;
 const keys = require('./keys');
 const mongoose = require('mongoose');
-const req = require('express/lib/request');
 
 const User = mongoose.model('users');
 
-passport.serializeUser(function (user, done) {
-  done(null, user);
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
 
-passport.deserializeUser((id, done) => {
-  User.findById(id).then((user) => {
-    done(null, user);
+passport.deserializeUser(function (id, done) {
+  User.findById(id, (err, user) => {
+    done(err, user);
   });
 });
 
@@ -60,7 +58,7 @@ passport.use(
         userId: profile.id,
         fullName: profile.displayName,
         avatar: profile.photos[0].value,
-        provider: profile.provider,
+        joinMethod: profile.provider,
       }).save();
       done(null, user);
     }

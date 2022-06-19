@@ -14,7 +14,7 @@ class NewAuth extends React.Component {
 
   render() {
     return (
-      <form className='form' action='/register' method='post'>
+      <form className='form' onSubmit={this.props.handleSubmit(this.onSubmit)}>
         <Field
           component={Input}
           type='text'
@@ -26,12 +26,6 @@ class NewAuth extends React.Component {
           type='password'
           label={authLocalization[4].authForms.password[lang]}
           name='password'
-        />
-        <Field
-          component={Input}
-          type='password'
-          label={authLocalization[4].authForms.repeatPassword[lang]}
-          name='repeat-password'
         />
         <input
           type='submit'
