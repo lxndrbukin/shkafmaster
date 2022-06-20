@@ -14,25 +14,28 @@ class OrderForm extends React.Component {
 
   categories() {
     return ['-', 'Шкафы', 'Кухни'];
-  };
+  }
 
   orderSocials() {
-    return ['Telegram', 'WhatsApp', 'Viber', orderLocalization.orderForm.orderCallRequest[lang]]
+    return [
+      'Telegram',
+      'WhatsApp',
+      'Viber',
+      orderLocalization.orderForm.orderCallRequest[this.props.language],
+    ];
   }
 
   onSubmit = (formValues) => {
     this.props.makeOrder(formValues);
   };
 
-  checkboxValue() {
-
-  }
+  checkboxValue() {}
 
   render() {
     return (
       <div className='order-form-container'>
         <div className='order-form-header'>
-          {orderLocalization.orderForm.header[lang]}
+          {orderLocalization.orderForm.header[this.props.language]}
         </div>
         <form
           onSubmit={this.props.handleSubmit(this.onSubmit)}
@@ -41,42 +44,46 @@ class OrderForm extends React.Component {
           <Field
             component={Input}
             type='text'
-            label={orderLocalization.orderForm.name[lang]}
+            label={orderLocalization.orderForm.name[this.props.language]}
             name='name'
           />
           <Field
             component={Input}
             type='text'
-            label={orderLocalization.orderForm.phoneNumber[lang]}
+            label={orderLocalization.orderForm.phoneNumber[this.props.language]}
             name='phone'
           />
-          {
-            this.orderSocials().map((social, idx) => {
-              return (
-                <Field 
-                  key={idx}
-                  component={Checkbox}
-                  label={social}
-                  name={social === 'Phone call' || social === 'Звонок' || social === 'Apel' ? 'phonecall' : social.toLowerCase()}
-                />
-              )
-            })
-          }
+          {this.orderSocials().map((social, idx) => {
+            return (
+              <Field
+                key={idx}
+                component={Checkbox}
+                label={social}
+                name={
+                  social === 'Phone call' ||
+                  social === 'Звонок' ||
+                  social === 'Apel'
+                    ? 'phonecall'
+                    : social.toLowerCase()
+                }
+              />
+            );
+          })}
           <Field
             component={Select}
             options={this.categories()}
             type='text'
-            label={orderLocalization.orderForm.itemType[lang]}
+            label={orderLocalization.orderForm.itemType[this.props.language]}
             name='item'
           />
           <Field
             component={Textarea}
-            label={orderLocalization.orderForm.comments[lang]}
+            label={orderLocalization.orderForm.comments[this.props.language]}
             name='comment'
           />
           <input
             type='submit'
-            value={orderLocalization.orderForm.orderButton[lang]}
+            value={orderLocalization.orderForm.orderButton[this.props.language]}
             className='form-button'
           />
         </form>
@@ -94,7 +101,7 @@ const mapStateToProps = (state) => {
       telegram: false,
       viber: false,
       whatsapp: false,
-      phonecall: false
+      phonecall: false,
     },
   };
 };

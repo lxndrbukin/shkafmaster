@@ -5,7 +5,7 @@ import { lang } from '../assets/Localization/language';
 import footerLocalization from '../assets/Localization/footerLocalization.json';
 import './Footer.scss';
 
-const Footer = () => {
+const Footer = ({ language }) => {
   const date = new Date();
   const year = date.getFullYear();
 
@@ -18,7 +18,7 @@ const Footer = () => {
               {footerLocalization.linksList.map((link, idx) => {
                 return (
                   <li key={idx}>
-                    <NavLink to={link.pathname}>{link.name[lang]}</NavLink>
+                    <NavLink to={link.pathname}>{link.name[language]}</NavLink>
                   </li>
                 );
               })}

@@ -18,18 +18,18 @@ class NewAuth extends React.Component {
         <Field
           component={Input}
           type='text'
-          label={authLocalization[4].authForms.email[lang]}
+          label={authLocalization[4].authForms.email[this.props.language]}
           name='username'
         />
         <Field
           component={Input}
           type='password'
-          label={authLocalization[4].authForms.password[lang]}
+          label={authLocalization[4].authForms.password[this.props.language]}
           name='password'
         />
         <input
           type='submit'
-          value={authLocalization[0].authButtons.register[lang]}
+          value={authLocalization[0].authButtons.register[this.props.language]}
           className='form-button'
         />
       </form>

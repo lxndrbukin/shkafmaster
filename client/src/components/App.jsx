@@ -14,24 +14,46 @@ import NewItem from './Forms/NewItem';
 
 class App extends React.Component {
   state = {
-    language: '',
+    language: localStorage.getItem('language')
+      ? localStorage.getItem('language')
+      : 'ro',
+  };
+
+  changeLanguage = (language) => {
+    this.setState({ language: language });
   };
 
   render() {
     return (
       <div className='component-wrapper'>
         <Router history={history}>
-          <Header />
+          <Header
+            language={this.state.language}
+            changeLanguage={this.changeLanguage}
+          />
           <div className='container'>
             <Routes>
-              <Route path='/' element={<MainPage />} />
-              <Route path='/login' exact element={<AuthPage />} />
-              <Route path='/order' element={<OrderForm />} />
+              <Route
+                path='/'
+                element={<MainPage language={this.state.language} />}
+              />
+              <Route
+                path='/login'
+                exact
+                element={<AuthPage language={this.state.language} />}
+              />
+              <Route
+                path='/order'
+                element={<OrderForm language={this.state.language} />}
+              />
               <Route path='/orders' element={<OrdersPage />} />
-              <Route path='/new-item' element={<NewItem />} />
+              <Route
+                path='/new-item'
+                element={<NewItem language={this.state.language} />}
+              />
             </Routes>
           </div>
-          <Footer />
+          <Footer language={this.state.language} />
         </Router>
       </div>
     );
