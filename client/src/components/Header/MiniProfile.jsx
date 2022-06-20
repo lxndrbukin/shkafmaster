@@ -27,7 +27,13 @@ class MiniProfile extends React.Component {
             <li>Profile</li>
             <li>Settings</li>
             <li>
-              <button onClick={this.props.logoutUser}>Log out</button>
+              <button
+                onClick={() => {
+                  this.props.logoutUser();
+                }}
+              >
+                Log out
+              </button>
             </li>
           </ul>
         </div>

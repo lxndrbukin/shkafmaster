@@ -19,9 +19,9 @@ const Header = ({ fetchUser, currentUser, changeLanguage, language }) => {
   }, [user]);
 
   const [barHeight, setHeight] = useState(0);
-  const openSteps = () => {
-    barHeight === 0 ? setHeight('242px') : setHeight(0);
-  };
+  // const openSteps = () => {
+  //   barHeight === 0 ? setHeight('242px') : setHeight(0);
+  // };
 
   const showLinks = () => {
     return (
@@ -38,7 +38,7 @@ const Header = ({ fetchUser, currentUser, changeLanguage, language }) => {
   };
 
   const showAuthButtons = () => {
-    if (currentUser) {
+    if (currentUser && currentUser !== 'Logged Out') {
       return <MiniProfile />;
     }
     return (

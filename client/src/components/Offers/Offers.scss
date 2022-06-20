@@ -1,58 +1,57 @@
 @import '../assets/variables.scss';
 
 .offers-wrapper {
+  .offers {
+    gap: 15px;
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
 
-	.offers {
-		gap: 15px;
-		display: inline-grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		width: 100%;
+    .offer {
+      width: 100%;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: $main-box-shadow;
+      min-height: 160px;
+      overflow: hidden;
 
-		.offer {
-			width: 100%;
-			margin: auto;
-			background-color: #fff;
-			border-radius: 10px;
-			box-shadow: $main-box-shadow;
-			min-height: 200px;
-			overflow: hidden;
+      .offer-header {
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 15px;
+        position: relative;
+        color: #fff;
+        font-weight: bold;
+        background-size: cover;
 
-			.offer-header {
-				height: 150px;
-				display: flex;
-				justify-content: space-between;
-				padding: 5px 15px;
-				position: relative;
-				color: #fff;
-				font-weight: bold;
-				background-size: cover;
+        .offer-name {
+          background-color: $main-color;
+          height: fit-content;
+          padding: 5px;
+          position: absolute;
+          bottom: 0;
+        }
 
-				.offer-name {
-					background-color: $main-color;
-					height: fit-content;
-					padding: 5px;
-					position: absolute;
-					bottom: 0;
-				}
+        .offer-reduce {
+          background-color: $main-color;
+          height: 110px;
+          width: 110px;
+          transform: rotate(45deg);
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          right: -65px;
+          top: -65px;
 
-				.offer-reduce {
-					background-color: $main-color;
-					height: 110px;
-					width: 110px;
-					transform: rotate(45deg);
-					padding: 5px;
-					display: flex;
-					justify-content: center;
-					position: absolute;
-					right: -65px;
-					top: -65px;
-
-					span {
-						margin: auto auto 0 auto;
-						font-size: 22px;
-					}
-				}
-			}
-		}
-	}
+          span {
+            margin: auto auto 0 auto;
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
 }
