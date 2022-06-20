@@ -1,37 +1,37 @@
 @import '../assets/variables.scss';
 
 .categories {
-    gap: 15px;
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    width: 100%;
+	gap: 15px;
+	display: inline-grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	width: 100%;
 
-    .category {
-        width: 100%;
-        margin: auto;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: $main-box-shadow;
-        min-height: 200px;
+	.category {
+		width: 100%;
+		margin: auto;
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: $main-box-shadow;
+		min-height: 200px;
 
-        .category-header {
-            display: flex;
-            position: relative;
-            width: 100%;
+		.category-header {
+			display: flex;
+			position: relative;
+			width: 100%;
 
-            .category-name {
-                padding: 10px;
-                font-size: 19px;
-                font-weight: bold;
-            }
+			.category-name {
+				padding: 10px;
+				font-size: 19px;
+				font-weight: bold;
+			}
 
-            .category-icon {
-                height: 62px;
-                width: 62px;
-                position: absolute;
-                right: 5px;
-                top: -15px;
-            }
-        }
-    }
+			.category-icon {
+				height: 62px;
+				width: 62px;
+				position: absolute;
+				right: 5px;
+				top: -15px;
+			}
+		}
+	}
 }

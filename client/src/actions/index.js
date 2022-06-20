@@ -34,3 +34,12 @@ export const addItem = (formValues) => async (dispatch) => {
   const res = await axios.post('/api/items', { ...formValues });
   dispatch({ type: 'ADD_ITEM', payload: res.data });
 };
+
+export const addOffer = (formValues) => async (dispatch) => {
+  const res = await axios.post('/api/offers', { ...formValues });
+  dispatch({ type: 'ADD_OFFER', payload: res.data });
+};
+export const fetchOffers = () => async (dispatch) => {
+  const res = await axios.get('/api/offers');
+  dispatch({ type: 'FETCH_OFFERS', payload: res.data });
+};

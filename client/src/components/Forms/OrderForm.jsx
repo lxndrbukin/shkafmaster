@@ -105,7 +105,5 @@ const mapStateToProps = (state) => {
     },
   };
 };
-const orderForm = reduxForm({ form: 'makeOrder', enableReinitialize: true })(
-  OrderForm
-);
+const orderForm = reduxForm({ form: 'makeOrder', enableReinitialize: true })(OrderForm);
 export default connect(mapStateToProps, { makeOrder, fetchUser })(orderForm);

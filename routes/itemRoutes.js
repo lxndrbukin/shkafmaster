@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Item = mongoose.model('items');
+const Offer = mongoose.model('offers');
 
 module.exports = (app) => {
   app.get('/api/items', async (req, res) => {
@@ -9,7 +10,7 @@ module.exports = (app) => {
   });
 
   app.post('/api/items', async (req, res) => {
-    const item = new Item({
+    const item = await new Item({
       itemNameRU: req.body.itemNameRU,
       itemNameRO: req.body.itemNameRO,
       itemTypeRU: req.body.itemTypeRU,
@@ -18,6 +19,6 @@ module.exports = (app) => {
       itemDescrRU: req.body.itemDescrRO,
     });
     item.save();
-    req.send(item);
+    res.send(item);
   });
 };

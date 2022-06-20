@@ -10,6 +10,7 @@ require('./models/User');
 require('./services/passport');
 require('./models/Order');
 require('./models/Item');
+require('./models/Offer');
 
 const app = express();
 
@@ -48,6 +49,7 @@ require('./routes/authRoutes')(app);
 require('./routes/userRoutes')(app);
 require('./routes/orderRoutes')(app);
 require('./routes/itemRoutes')(app);
+require('./routes/offerRoutes')(app);
 
 app.use(express.static('client/build'));
 

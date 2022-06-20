@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const Input = ({ label, input, name, type, value }) => {
+export const Input = ({ label, input, name, type, value, style }) => {
   return (
-    <div className='form-input'>
+    <div className='form-input' style={style}>
       <label>{label}</label>
       <input type={type} name={name} value={value} {...input} />
     </div>
