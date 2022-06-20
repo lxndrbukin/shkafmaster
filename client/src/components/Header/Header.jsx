@@ -8,7 +8,7 @@ import MiniProfile from './MiniProfile';
 import { NavLink } from 'react-router-dom';
 import headerLocalization from '../assets/Localization/headerLocalization.json';
 import { lang } from '../assets/Localization/language';
-import { Button, ExternalButton } from '../assets/Button/Button';
+import { Button } from '../assets/Button/Button';
 
 const Header = ({ fetchUser, currentUser }) => {
   const [user, setUser] = useState({});
@@ -55,8 +55,8 @@ const Header = ({ fetchUser, currentUser }) => {
       <select
         className='header_languages-dropdown'
         onChange={(e) => {
-          window.location.reload();
           localStorage.setItem('language', e.target.value.toLowerCase());
+          window.location.reload();
         }}
       >
         {supportedLanguages.map((supportedLang, idx) => {

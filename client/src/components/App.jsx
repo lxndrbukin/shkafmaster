@@ -13,6 +13,10 @@ import OrderForm from './Forms/OrderForm';
 import NewItem from './Forms/NewItem';
 
 class App extends React.Component {
+  state = {
+    language: '',
+  };
+
   render() {
     return (
       <div className='component-wrapper'>

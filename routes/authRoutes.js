@@ -67,6 +67,6 @@ module.exports = (app) => {
 
   app.get('/api/logout', (req, res) => {
     req.logout();
-    return res.send('Logged out');
+    return res.send('Logged Out');
   });
 };
