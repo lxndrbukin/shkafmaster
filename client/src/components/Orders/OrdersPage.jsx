@@ -15,31 +15,27 @@ class OrdersPage extends React.Component {
     }
     return this.props.orders.map((order, idx) => {
       return (
-        <Order 
+        <Order
           key={idx}
-          name={order.name} 
-          phone={order.phone} 
+          name={order.name}
+          phone={order.phone}
           communications={order.communications}
-          item={order.item} 
-          comment={order.comment} 
+          item={order.item}
+          comment={order.comment}
         />
-      )
-    })
+      );
+    });
   }
 
   render() {
-    return (
-      <div className="orders-list">
-        {this.ordersList()}
-      </div>
-    )
+    return <div className='orders-list'>{this.ordersList()}</div>;
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    orders: state.orders
-  }
-}
+    orders: state.orders,
+  };
+};
 
 export default connect(mapStateToProps, { fetchOrders })(OrdersPage);

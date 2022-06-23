@@ -64,7 +64,12 @@ class Auth extends React.Component {
             />
           </div>
         </form>
-        <form className='form' action={`/auth/${this.state.auth}`} method='get'>
+        <form
+          className='form'
+          target='_blank'
+          action={`/auth/${this.state.auth}`}
+          method='get'
+        >
           <div className='auth-buttons'>{this.renderSocialLogin()}</div>
         </form>
       </React.Fragment>

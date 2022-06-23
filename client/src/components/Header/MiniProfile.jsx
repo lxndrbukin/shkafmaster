@@ -8,6 +8,23 @@ class MiniProfile extends React.Component {
     showMenu: false,
   };
 
+  displayAvatar() {
+    if (this.props.currentUser.avatar) {
+      return (
+        <div
+          className='header_mini-profile_icon'
+          style={{ backgroundImage: `url(${this.props.currentUser.avatar})` }}
+        ></div>
+      );
+    } else {
+      return (
+        <div className='header_mini-profile_icon'>
+          <i className='far fa-user'></i>
+        </div>
+      );
+    }
+  }
+
   render() {
     const { showMenu } = this.state;
     return (
@@ -16,9 +33,7 @@ class MiniProfile extends React.Component {
         onMouseOut={() => this.setState({ showMenu: !showMenu })}
         className='header_mini-profile'
       >
-        <div className='header_mini-profile_icon'>
-          <i className='far fa-user'></i>
-        </div>
+        {this.displayAvatar()}
         <div
           style={showMenu ? { display: 'block' } : { display: 'none' }}
           className='header_mini-profile_menu'
@@ -42,4 +57,10 @@ class MiniProfile extends React.Component {
   }
 }
 
-export default connect(null, { logoutUser })(MiniProfile);
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser,
+  };
+};
+
+export default connect(mapStateToProps, { logoutUser })(MiniProfile);

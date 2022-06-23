@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import history from '../history';
-// import { lang } from './assets/Localization/language';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import AuthPage from './Pages/AuthPage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -11,7 +15,7 @@ import MainPage from './Pages/MainPage';
 import OrdersPage from './Orders/OrdersPage';
 import OrderForm from './Forms/OrderForm';
 import OfferForm from './Forms/OfferForm';
-import Offers from './Offers/Offers';
+// import Offers from './Offers/Offers';
 import NewItem from './Forms/NewItem';
 
 class App extends React.Component {
@@ -20,6 +24,14 @@ class App extends React.Component {
       ? localStorage.getItem('language')
       : 'ro',
   };
+
+  showLoginPage() {
+    if (this.props.currentUser && this.props.currentUser !== 'Logged Out') {
+      return <Navigate to='/' />;
+    } else {
+      return <AuthPage language={this.state.language} />;
+    }
+  }
 
   changeLanguage = (language) => {
     this.setState({ language: language });
@@ -39,11 +51,7 @@ class App extends React.Component {
                 path='/'
                 element={<MainPage language={this.state.language} />}
               />
-              <Route
-                path='/login'
-                exact
-                element={<AuthPage language={this.state.language} />}
-              />
+              <Route path='/login' exact element={this.showLoginPage()} />
               <Route
                 path='/order'
                 element={<OrderForm language={this.state.language} />}
@@ -70,4 +78,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser,
+  };
+};
+
+export default connect(mapStateToProps, {})(App);
