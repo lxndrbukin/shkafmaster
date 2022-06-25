@@ -1,46 +1,45 @@
 @import '../components/assets/variables.scss';
 
 body {
-	font-family: $montserrat, sans-serif;
-	margin: 0;
-	background-color: $main-background-color;
+  font-family: $montserrat, sans-serif;
+  margin: 0;
+  background-color: $main-background-color;
 
-	a {
-		text-decoration: none;
-	}
+  a {
+    text-decoration: none;
+  }
 
-	select {
-		&:focus {
-			outline: none;
-		}
-	}
+  select {
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .block-header {
-	font-size: 23px;
-	font-weight: bold;
-	padding: 5px;
+  font-size: 23px;
+  font-weight: bold;
+  padding: 5px;
 }
 
 .block-wrapper {
-	padding: 0 0 20px 0;
+  padding: 20px 0 0 0;
 }
 
 .component-wrapper {
-
-	.container {
-		min-height: calc(100vh - 276px);
-		width: 75%;
-		display: flex;
-		margin: auto;
-		justify-content: center;
-	}
+  .container {
+    min-height: calc(100vh - 276px);
+    width: 75%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
-	.component-wrapper {
-		.container {
-			width: 97%;
-		}
-	}
+  .component-wrapper {
+    .container {
+      width: 97%;
+    }
+  }
 }

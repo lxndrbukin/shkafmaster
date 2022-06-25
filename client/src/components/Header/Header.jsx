@@ -3,11 +3,10 @@ import './Header.scss';
 import { supportedLanguages } from '../assets/Localization/supportedLanguages';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions';
-import Delivery from '../Delivery/Delivery';
+// import Delivery from '../Delivery/Delivery';
 import MiniProfile from './MiniProfile';
 import { NavLink } from 'react-router-dom';
 import headerLocalization from '../assets/Localization/headerLocalization.json';
-import { lang } from '../assets/Localization/language';
 import { Button } from '../assets/Button/Button';
 
 const Header = ({ fetchUser, currentUser, changeLanguage, language }) => {
@@ -18,7 +17,7 @@ const Header = ({ fetchUser, currentUser, changeLanguage, language }) => {
     setUser(currentUser);
   }, [user]);
 
-  const [barHeight, setHeight] = useState(0);
+  // const [barHeight, setHeight] = useState(0);
   // const openSteps = () => {
   //   barHeight === 0 ? setHeight('242px') : setHeight(0);
   // };

@@ -1,8 +1,8 @@
 import React from 'react';
-import './Orders.scss';
+import '../Orders/Orders.scss';
 import { connect } from 'react-redux';
 import { fetchOrders } from '../../actions';
-import Order from './Order';
+import Order from '../Orders/Order';
 
 class OrdersPage extends React.Component {
   componentDidMount() {

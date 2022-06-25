@@ -12,10 +12,10 @@ import AuthPage from './Pages/AuthPage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import MainPage from './Pages/MainPage';
-import OrdersPage from './Orders/OrdersPage';
+import OrdersPage from './Pages/OrdersPage';
 import OrderForm from './Forms/OrderForm';
 import OfferForm from './Forms/OfferForm';
-// import Offers from './Offers/Offers';
+import OffersPage from './Pages/OffersPage';
 import NewItem from './Forms/NewItem';
 
 class App extends React.Component {
@@ -65,10 +65,10 @@ class App extends React.Component {
                 path='/new-offer'
                 element={<OfferForm language={this.state.language} />}
               />
-              {/* <Route
+              <Route
                 path='/offers'
-                element={<Offers language={this.state.language} />}
-              /> */}
+                element={<OffersPage language={this.state.language} />}
+              />
             </Routes>
           </div>
           <Footer language={this.state.language} />
