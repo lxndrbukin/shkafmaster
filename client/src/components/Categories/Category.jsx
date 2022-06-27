@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Category = ({ name, background }) => {
   return (
-    <div className='category'>
+    <NavLink to='/' className='category'>
       <div
         className='category-background'
         style={{ backgroundImage: `url(${background})` }}
@@ -10,7 +11,7 @@ const Category = ({ name, background }) => {
       <div className='category-header'>
         <div className='category-name'>{name}</div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions';
 // import Delivery from '../Delivery/Delivery';
 import MiniProfile from './MiniProfile';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 import headerLocalization from '../assets/Localization/headerLocalization.json';
 import { Button } from '../assets/Button/Button';
 
