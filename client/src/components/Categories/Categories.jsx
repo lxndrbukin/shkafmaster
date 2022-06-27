@@ -5,15 +5,13 @@ import Category from './Category';
 class Categories extends React.Component {
   render() {
     return (
-      <div className="categories-wrapper block-wrapper">
-        <div className="categories block-header">
-          { this.props.name }
-        </div>
-        <div className="categories">
+      <div className='categories-wrapper block-wrapper'>
+        {/* <div className='categories block-header'>{this.props.name}</div> */}
+        <div className='categories'>
           <Category />
         </div>
       </div>
-    )
+    );
   }
 }
 

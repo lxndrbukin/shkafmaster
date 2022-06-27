@@ -10,11 +10,11 @@ class MainPage extends React.Component {
       <div className='page-wrapper'>
         <div className='page'>
           <Categories name={bodyLocalization.categories[this.props.language]} />
-          <Offers
+          {/* <Offers
             language={this.props.language}
             name={bodyLocalization.offers[this.props.language]}
             slice='4'
-          />
+          /> */}
         </div>
       </div>
     );

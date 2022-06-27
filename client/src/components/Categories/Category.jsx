@@ -7,12 +7,12 @@ const Category = () => {
     return categoriesList.map((category, idx) => {
       return (
         <div key={idx} className='category'>
+          <div
+            className='category-background'
+            style={{ backgroundImage: `url(${category.background})` }}
+          ></div>
           <div className='category-header'>
             <div className='category-name'>{category.name.ru}</div>
-            <div
-              style={{ backgroundImage: `url(${category.icon})` }}
-              className='category-icon'
-            ></div>
           </div>
         </div>
       );

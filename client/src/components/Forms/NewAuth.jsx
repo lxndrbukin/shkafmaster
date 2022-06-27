@@ -4,10 +4,13 @@ import { Input } from './Input';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { createUser } from '../../actions';
-import { lang } from '../assets/Localization/language';
 import authLocalization from '../assets/Localization/authLocalization.json';
 
 class NewAuth extends React.Component {
+  state = {
+    blur: false,
+  };
+
   onSubmit = (formValues) => {
     this.props.createUser(formValues);
   };

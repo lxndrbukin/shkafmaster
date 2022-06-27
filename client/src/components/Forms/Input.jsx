@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Input = ({ label, input, name, type, value, style }) => {
   return (
@@ -29,8 +29,8 @@ export const Checkbox = ({ label, name, value, input }) => {
       <input type='checkbox' name={name} value={value} {...input} />
       <label>{label}</label>
     </div>
-  )
-}
+  );
+};
 
 export const Textarea = ({ label, name, placeholder, input }) => {
   return (
