@@ -6,7 +6,7 @@ export const categoriesList = [
   {
     name: {
       ru: 'Шкафы',
-      md: 'Dulapuri',
+      ro: 'Dulapuri',
     },
     icon: wardrobe,
     background:
@@ -15,7 +15,7 @@ export const categoriesList = [
   {
     name: {
       ru: 'Офис',
-      md: 'Oficiu',
+      ro: 'Oficiu',
     },
     icon: office,
     background:
@@ -24,7 +24,7 @@ export const categoriesList = [
   {
     name: {
       ru: 'Кухни',
-      md: 'Bucatarii',
+      ro: 'Bucatarii',
     },
     icon: kitchen,
     background:
@@ -32,16 +32,20 @@ export const categoriesList = [
   },
   {
     name: {
-      ru: 'Кухни',
-      md: 'Bucatarii',
+      ru: 'Столы',
+      ro: 'Mesuri',
     },
     icon: kitchen,
+    background:
+      'https://www.sokol-mebel.ru/global_images/goods/c4c/14b/45c/e6d/1037194.jpg',
   },
   {
     name: {
-      ru: 'Кухни',
-      md: 'Bucatarii',
+      ru: 'Прихожие',
+      ro: 'Antreuri',
     },
     icon: kitchen,
+    background:
+      'https://mebelasm.ru/upload/iblock/4f9/4f98a106693633e3ba3486e8073c8c80.jpg',
   },
 ];

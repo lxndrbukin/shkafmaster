@@ -1,6 +1,7 @@
 import React from 'react';
 import './Categories.scss';
 import Category from './Category';
+import { categoriesList } from './categoriesList';
 
 class Categories extends React.Component {
   render() {
@@ -8,7 +9,19 @@ class Categories extends React.Component {
       <div className='categories-wrapper block-wrapper'>
         {/* <div className='categories block-header'>{this.props.name}</div> */}
         <div className='categories'>
-          <Category />
+          {categoriesList.map((category, idx) => {
+            return (
+              <Category
+                key={idx}
+                background={category.background}
+                name={
+                  category.name[
+                    this.props.language === 'en' ? 'ro' : this.props.language
+                  ]
+                }
+              />
+            );
+          })}
         </div>
       </div>
     );

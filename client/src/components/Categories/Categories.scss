@@ -1,7 +1,7 @@
 @import '../assets/variables.scss';
 
 .categories {
-  gap: 15px;
+  // gap: 15px;
   // display: inline-grid;
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +13,7 @@
     // max-width: 350px;
     // margin: auto;
     // background-color: #fff;
-    border-radius: 10px;
+    // border-radius: 10px;
     box-shadow: $main-box-shadow;
     // min-height: 200px;
     min-width: 30%;
@@ -55,11 +55,13 @@
       left: 15px;
 
       .category-name {
-        background-color: $main-color;
-        height: fit-content;
-        font-size: 22px;
-        padding: 5px;
+        font-weight: bold;
+        background-color: #f78223;
+        padding: 10px;
+        color: white;
         border-radius: 5px;
+        z-index: 1;
+        box-shadow: $main-box-shadow;
       }
 
       .category-icon {
