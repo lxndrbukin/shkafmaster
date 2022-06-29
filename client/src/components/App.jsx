@@ -9,6 +9,7 @@ import {
 import history from '../history';
 import { connect } from 'react-redux';
 import AuthPage from './Pages/AuthPage';
+import ProfilePage from './Pages/ProfilePage';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import MainPage from './Pages/MainPage';
@@ -33,8 +34,18 @@ class App extends React.Component {
     }
   }
 
-  changeLanguage = (language) => {
-    this.setState({ language: language });
+  showProfilePage() {
+    if (this.props.currentUser && this.props.currentUser !== 'Logged Out') {
+      console.log('Yep');
+      return <ProfilePage />;
+    } else {
+      console.log('Nope');
+      return <Navigate to='/' />;
+    }
+  }
+
+  changeLanguage = (languageCode) => {
+    this.setState({ language: languageCode });
   };
 
   render() {
@@ -52,6 +63,7 @@ class App extends React.Component {
                 element={<MainPage language={this.state.language} />}
               />
               <Route path='/login' exact element={this.showLoginPage()} />
+              <Route path='/profile' exact element={this.showProfilePage()} />
               <Route
                 path='/order'
                 element={<OrderForm language={this.state.language} />}
