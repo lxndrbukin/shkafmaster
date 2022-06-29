@@ -1,0 +1,39 @@
+@import '../assets/variables.scss';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: $main-box-shadow;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 7.5px 15px;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  height: fit-content;
+  min-width: 600px;
+  max-width: 50%;
+
+  .profile_header {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  .profile-info {
+    display: flex;
+    justify-content: space-around;
+
+    .profile-info_avatar {
+      width: fit-content;
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}

@@ -36,7 +36,6 @@ class App extends React.Component {
 
   showProfilePage() {
     if (this.props.currentUser && this.props.currentUser !== 'Logged Out') {
-      console.log('Yep');
       return <ProfilePage />;
     } else {
       console.log('Nope');

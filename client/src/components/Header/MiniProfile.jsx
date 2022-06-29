@@ -1,5 +1,6 @@
 import React from 'react';
 import headerLocalization from '../assets/Localization/headerLocalization.json';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions';
 
@@ -39,7 +40,11 @@ class MiniProfile extends React.Component {
           className='header_mini-profile_menu'
         >
           <ul>
-            <li>Profile</li>
+            <li>
+              <NavLink to='/profile'>
+                <button>Profile</button>
+              </NavLink>
+            </li>
             <li>Settings</li>
             <li>
               <button
