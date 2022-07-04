@@ -1,7 +1,6 @@
 import React from 'react';
 import '../assets/Form.scss';
 import orderLocalization from '../assets/Localization/orderLocalization.json';
-import { lang } from '../assets/Localization/language';
 import { reduxForm, Field } from 'redux-form';
 import { Input, Textarea, Select, Checkbox } from './Input';
 import { connect } from 'react-redux';
@@ -105,5 +104,7 @@ const mapStateToProps = (state) => {
     },
   };
 };
-const orderForm = reduxForm({ form: 'makeOrder', enableReinitialize: true })(OrderForm);
+const orderForm = reduxForm({ form: 'makeOrder', enableReinitialize: true })(
+  OrderForm
+);
 export default connect(mapStateToProps, { makeOrder, fetchUser })(orderForm);

@@ -14,11 +14,8 @@ class Categories extends React.Component {
               <Category
                 key={idx}
                 background={category.background}
-                name={
-                  category.name[
-                    this.props.language === 'en' ? 'ro' : this.props.language
-                  ]
-                }
+                name={category.name[this.props.language]}
+                url={category.name['en'].toLowerCase()}
               />
             );
           })}

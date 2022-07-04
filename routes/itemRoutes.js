@@ -13,10 +13,9 @@ module.exports = (app) => {
     const item = await new Item({
       itemNameRU: req.body.itemNameRU,
       itemNameRO: req.body.itemNameRO,
-      itemTypeRU: req.body.itemTypeRU,
-      itemTypeRO: req.body.itemTypeRO,
+      itemType: req.body.itemType,
       itemDescrRU: req.body.itemDescrRU,
-      itemDescrRU: req.body.itemDescrRO,
+      itemDescrRO: req.body.itemDescrRO,
     });
     item.save();
     res.send(item);

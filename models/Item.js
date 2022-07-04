@@ -4,10 +4,9 @@ const { Schema } = mongoose;
 const itemSchema = new Schema({
   itemNameRU: String,
   itemNameRO: String,
-  itemTypeRU: String,
-  itemTypeRO: String,
+  itemType: String,
   itemDescrRU: String,
-  itemDescrRO: String
+  itemDescrRO: String,
 });
 
 mongoose.model('items', itemSchema);

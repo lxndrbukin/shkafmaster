@@ -1,7 +1,8 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Input, Textarea, Select } from './Input';
-import { Button } from '../assets/Button/Button';
+import { Navigate } from 'react-router-dom';
+// import { Button } from '../assets/Button/Button';
 import { connect } from 'react-redux';
 import { addOffer } from '../../actions';
 
@@ -12,6 +13,7 @@ class OfferForm extends React.Component {
 
   onSubmit = (formValues) => {
     this.props.addOffer(formValues);
+    return <Navigate to='/' />;
   };
 
   render() {
@@ -36,11 +38,7 @@ class OfferForm extends React.Component {
             <Field component={Textarea} label='Text RU' name='textRU' />
             <Field component={Textarea} label='Text RO' name='textRO' />
           </div>
-          <input
-            type='submit'
-            className='form-button'
-            style={{ margin: 'auto' }}
-          />
+          <input type='submit' className='form-button' />
         </div>
       </form>
     );

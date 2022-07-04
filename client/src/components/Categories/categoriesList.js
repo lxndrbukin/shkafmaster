@@ -7,6 +7,7 @@ export const categoriesList = [
     name: {
       ru: 'Шкафы',
       ro: 'Dulapuri',
+      en: 'Wardrobes',
     },
     icon: wardrobe,
     background:
@@ -16,6 +17,7 @@ export const categoriesList = [
     name: {
       ru: 'Офис',
       ro: 'Oficiu',
+      en: 'Offices',
     },
     icon: office,
     background:
@@ -25,6 +27,7 @@ export const categoriesList = [
     name: {
       ru: 'Кухни',
       ro: 'Bucatarii',
+      en: 'Kitchens',
     },
     icon: kitchen,
     background:
@@ -34,6 +37,7 @@ export const categoriesList = [
     name: {
       ru: 'Столы',
       ro: 'Mesuri',
+      en: 'Tables',
     },
     icon: kitchen,
     background:
@@ -43,6 +47,7 @@ export const categoriesList = [
     name: {
       ru: 'Прихожие',
       ro: 'Antreuri',
+      en: 'Hallways',
     },
     icon: kitchen,
     background:
