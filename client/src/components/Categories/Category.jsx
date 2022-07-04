@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Category = ({ name, background, url }) => {
+const Category = ({ name, defaultCategory, num }) => {
+  const categories = Array.from(document.querySelectorAll('.category'));
+  const active = document.querySelector('.category_active');
+
   return (
-    <NavLink to={`/${url}`} className='category'>
-      <div
-        className='category-background'
-        style={{ backgroundImage: `url(${background})` }}
-      ></div>
-      <div className='category-header'>
-        <div className='category-name'>{name}</div>
-      </div>
-    </NavLink>
+    <button
+      className='category'
+      onClick={(e) => {
+        console.log(e.target.getBoundingClientRect().width);
+        console.log(e.target.getBoundingClientRect().left);
+        active.style.width = `${e.target.offsetWidth}px`;
+        active.style.marginLeft = `${categories[num].offsetWidth * num}px`;
+      }}
+    >
+      {name}
+    </button>
   );
 };
 

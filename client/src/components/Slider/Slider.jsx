@@ -32,10 +32,10 @@ const Slider = () => {
     <div className='slider-wrapper'>
       <div className='slider'>{showSlides()}</div>
       <div className='slider-btn right'>
-        <i className='fa-solid fa-angle-right'></i>
+        <i className='fas fa-angle-right'></i>
       </div>
       <div className='slider-btn left'>
-        <i className='fa-solid fa-angle-left'></i>
+        <i className='fas fa-angle-left'></i>
       </div>
     </div>
   );

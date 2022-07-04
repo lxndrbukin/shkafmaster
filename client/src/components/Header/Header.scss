@@ -8,17 +8,18 @@
     display: flex;
     justify-content: space-between;
     height: 65px;
-    width: 75%;
+    width: 100%;
     margin: auto;
+    position: relative;
 
     .header-logo {
       display: flex;
       flex-direction: column;
-      margin: 10px;
       text-align: center;
       overflow: hidden;
-      height: 55px;
       cursor: pointer;
+      margin: 0;
+      position: absolute;
 
       &:hover {
         .header-logo_secondary {
@@ -32,9 +33,32 @@
         background-color: rgb(247, 130, 35);
         padding: 10px;
         color: white;
-        border-radius: 5px;
+        // border-radius: 5px;
+        height: 80px;
+        width: 100px;
         z-index: 1;
         box-shadow: $main-box-shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        .header-logo_main-text {
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          height: 80px;
+          width: 80px;
+          border: 3px solid #fff;
+
+          span {
+            &:nth-last-of-type(1) {
+              margin: 0 auto auto auto;
+            }
+            &:nth-last-of-type(2) {
+              margin: auto auto 0 auto;
+            }
+          }
+        }
       }
 
       .header-logo_secondary {
@@ -120,6 +144,7 @@
 
     .header-menu {
       display: flex;
+      margin: 0 auto;
 
       .header-links {
         display: flex;
@@ -139,6 +164,7 @@
 
           span {
             margin: auto;
+            font-size: 14px;
           }
 
           &:after {
@@ -206,9 +232,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .header {
-    .header-bar {
-      width: 97%;
-    }
-  }
+  // .header {
+  //   .header-bar {
+  //     width: 97%;
+  //   }
+  // }
 }

@@ -1,11 +1,12 @@
 @import '../assets/variables.scss';
 
 .footer-wrapper {
+	padding: 28px;
 	
 	.footer {
 		margin: auto;
-		width: 75%;
-		padding: 29px 0 28px 0;
+		width: 100%;
+		// padding: 29px 0 28px 0;
 		
 		.footer-section {
 			display: flex;

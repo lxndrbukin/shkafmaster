@@ -38,7 +38,6 @@ class App extends React.Component {
     if (this.props.currentUser && this.props.currentUser !== 'Logged Out') {
       return <ProfilePage />;
     } else {
-      console.log('Nope');
       return <Navigate to='/' />;
     }
   }
