@@ -6,7 +6,6 @@ import { categoriesList } from '../assets/categoriesList';
 class Categories extends React.Component {
   render() {
     const categories = Array.from(document.querySelectorAll('.category'));
-    const categoriesDiv = document.querySelector('.categories');
     return (
       <div className='categories-wrapper block-wrapper'>
         {/* <div className='categories block-header'>{this.props.name}</div> */}
@@ -25,18 +24,16 @@ class Categories extends React.Component {
           })}
         </div>
         <div
-          className='categories_activity'
-          style={categoriesDiv ? { width: categoriesDiv.offsetWidth + 'px' } : {width: '300px'}}
-        >
-          <div
-            style={
-              categories[0]
-                ? { width: categories[0].offsetWidth + 'px' }
-                : { width: '100px' }
-            }
-            className='category_active'
-          ></div>
-        </div>
+          style={
+            categories[0]
+              ? {
+                  width: categories[0].offsetWidth + 'px',
+                  marginLeft: categories[0].getBoundingClientRect().left + 'px',
+                }
+              : { width: '0px', display: 'none' }
+          }
+          className='category_active'
+        ></div>
       </div>
     );
   }
