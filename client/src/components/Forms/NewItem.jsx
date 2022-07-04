@@ -2,11 +2,18 @@ import React from 'react';
 import { Input, Select, Textarea } from './Input';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
+import { categoriesList } from '../assets/categoriesList';
 import { addItem } from '../../actions';
 
 class NewItem extends React.Component {
   categories = () => {
-    return ['-', 'Wardrobe', 'Kitchen'];
+    const list = [];
+    categoriesList.map((category) => {
+      list.push(
+        `${category.name['ru']} / ${category.name['ro']} / ${category.name['en']}`
+      );
+    });
+    return list;
   };
 
   onSubmit = (formValues) => {

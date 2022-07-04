@@ -13,25 +13,24 @@
   }
 
   .profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: auto;
     box-shadow: $main-box-shadow;
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+    padding: 50px 25px;
     overflow: hidden;
     position: relative;
     height: fit-content;
-    width: 100%;
+    width: 70%;
 
     .profile-info {
       display: flex;
       flex-direction: row-reverse;
+      justify-content: space-between;
 
       .profile-info_lines {
-        margin: auto;
+        margin: auto 25px;
 
         .profile-info_line {
           display: flex;
@@ -51,11 +50,11 @@
 
       .profile-info_avatar {
         width: fit-content;
-        margin: auto;
+        margin: auto 25px;
 
         img {
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
         }
       }
     }

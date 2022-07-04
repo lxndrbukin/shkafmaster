@@ -1,7 +1,7 @@
 import React from 'react';
 import './Categories.scss';
 import Category from './Category';
-import { categoriesList } from './categoriesList';
+import { categoriesList } from '../assets/categoriesList';
 
 class Categories extends React.Component {
   render() {

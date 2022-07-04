@@ -1,6 +1,6 @@
-import wardrobe from '../assets/imgs/category-icons/icons8-wardrobe-62.png';
-import office from '../assets/imgs/category-icons/icons8-desk-62.png';
-import kitchen from '../assets/imgs/category-icons/icons8-kitchen-62.png';
+import wardrobe from './imgs/category-icons/icons8-wardrobe-62.png';
+import office from './imgs/category-icons/icons8-desk-62.png';
+import kitchen from './imgs/category-icons/icons8-kitchen-62.png';
 
 export const categoriesList = [
   {
@@ -15,8 +15,8 @@ export const categoriesList = [
   },
   {
     name: {
-      ru: 'Офис',
-      ro: 'Oficiu',
+      ru: 'Офисы',
+      ro: 'Oficii',
       en: 'Offices',
     },
     icon: office,
