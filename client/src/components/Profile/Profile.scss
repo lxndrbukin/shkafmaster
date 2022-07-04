@@ -1,39 +1,79 @@
 @import '../assets/variables.scss';
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: $main-box-shadow;
-  background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0 7.5px 15px;
-  padding: 10px;
-  overflow: hidden;
-  position: relative;
+.profile-wrapper {
+  width: 100%;
   height: fit-content;
-  min-width: 600px;
-  max-width: 50%;
+  margin: 20px auto;
 
   .profile_header {
-    font-size: 40px;
+    width: fit-content;
+    margin: auto;
     font-weight: bold;
-    margin: 0 auto;
-    padding: 5px;
+    font-size: 22px;
   }
 
-  .profile-info {
+  .profile {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: $main-box-shadow;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    height: fit-content;
+    width: 100%;
 
-    .profile-info_avatar {
-      width: fit-content;
+    .profile-info {
+      display: flex;
+      flex-direction: row-reverse;
 
-      img {
-        width: 150px;
-        height: 150px;
+      .profile-info_lines {
+        margin: auto;
+
+        .profile-info_line {
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+
+          .profile-info_line-subject {
+            font-weight: bold;
+            margin: auto;
+          }
+
+          .profile-info_line-info {
+            margin: auto;
+          }
+        }
+      }
+
+      .profile-info_avatar {
+        width: fit-content;
+        margin: auto;
+
+        img {
+          width: 150px;
+          height: 150px;
+        }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 0;
+    margin: 15px 0;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    height: fit-content;
+    width: 100%;
   }
 }
