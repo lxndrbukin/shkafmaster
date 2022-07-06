@@ -1,26 +1,29 @@
 @import '../assets/variables.scss';
 
 .categories-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
 
   .categories {
     display: flex;
-    border-bottom: 2px solid rgba(0, 0, 0, .1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     padding: 10px 0 0 0;
     height: fit-content;
     width: fit-content;
     margin: auto;
-  
+
     .category {
       // padding: 15px;
       height: 100%;
       margin: 15px;
       background-color: transparent;
       border: 0;
-  
+
       &:hover {
         cursor: pointer;
       }
-  
+
       .category-name {
         z-index: 1;
         font-size: 15px;
@@ -30,10 +33,20 @@
     }
   }
 
+  .category_items {
+    display: flex;
+    position: absolute;
+
+    .category_content {
+      width: 100vw;
+      height: fit-content;
+    }
+  }
+
   .category_active {
     position: relative;
     height: 2px;
-    transition: margin .3s, width .3s;
+    transition: margin 0.3s, width 0.3s;
 
     &:after {
       position: absolute;
