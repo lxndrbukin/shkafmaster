@@ -1,7 +1,7 @@
 export const sliderAnimation = (sliderClassName) => {
   const slider = document.querySelector(`.${sliderClassName}`);
-  const rightBtn = document.querySelector(`.right`);
-  const leftBtn = document.querySelector(`.left`);
+  // const rightBtn = document.querySelector(`.right`);
+  // const leftBtn = document.querySelector(`.left`);
   slider.classList.add('grab');
   const slides = Array.from(document.querySelectorAll('.slide'));
 
@@ -12,19 +12,19 @@ export const sliderAnimation = (sliderClassName) => {
     animationID,
     currentIndex = 0;
 
-  rightBtn.addEventListener('click', () => {
-    if (currentIndex < slides.length - 1) {
-      currentIndex++;
-      setPositionByIndex();
-    }
-  });
+  // rightBtn.addEventListener('click', () => {
+  //   if (currentIndex < slides.length - 1) {
+  //     currentIndex++;
+  //     setPositionByIndex();
+  //   }
+  // });
 
-  leftBtn.addEventListener('click', () => {
-    if (currentIndex <= slides.length - 1 && currentIndex !== 0) {
-      currentIndex--;
-      setPositionByIndex();
-    }
-  });
+  // leftBtn.addEventListener('click', () => {
+  //   if (currentIndex <= slides.length - 1 && currentIndex !== 0) {
+  //     currentIndex--;
+  //     setPositionByIndex();
+  //   }
+  // });
 
   slides.map((slide, index) => {
     const slideInfo = document.querySelector('.slide-info');

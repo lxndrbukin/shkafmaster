@@ -4,6 +4,14 @@ import Category from './Category';
 import { categoriesList } from '../assets/categoriesList';
 
 class Categories extends React.Component {
+  state = {
+    num: 0,
+  };
+
+  componentDidMount() {
+    this.setState({ num: 0 });
+  }
+
   render() {
     const categories = Array.from(document.querySelectorAll('.category'));
     return (
@@ -18,19 +26,25 @@ class Categories extends React.Component {
                 name={category.name[this.props.language]}
                 url={category.name['en'].toLowerCase()}
                 defaultCategory={categoriesList[0].name[this.props.language]}
-                num={idx}
+                num={this.state.num}
+                changeNum={() => {
+                  this.setState({ num: idx });
+                  console.log(this.state.num);
+                }}
               />
             );
           })}
         </div>
         <div
           style={
-            categories[0]
+            categories[this.state.num]
               ? {
-                  width: categories[0].offsetWidth + 'px',
-                  marginLeft: categories[0].getBoundingClientRect().left + 'px',
+                  width: categories[this.state.num].offsetWidth + 'px',
+                  marginLeft:
+                    categories[this.state.num].getBoundingClientRect().left +
+                    'px',
                 }
-              : { width: '0px', display: 'none' }
+              : { width: '100px' }
           }
           className='category_active'
         ></div>
