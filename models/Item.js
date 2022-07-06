@@ -5,6 +5,10 @@ const itemSchema = new Schema({
   itemNameRU: String,
   itemNameRO: String,
   itemType: String,
+  itemImg: {
+    data: Buffer,
+    contentType: String,
+  },
   itemDescrRU: String,
   itemDescrRO: String,
 });

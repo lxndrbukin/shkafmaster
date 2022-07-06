@@ -9,6 +9,14 @@ export const Input = ({ label, input, name, type, value, style }) => {
   );
 };
 
+export const FileInput = ({
+  input: { value: omitValue, ...inputProps },
+  meta: omitMeta,
+  ...props
+}) => {
+  return <input type='file' {...inputProps} {...props} />;
+};
+
 export const Select = ({ label, name, input, options }) => {
   return (
     <div className='form-select'>

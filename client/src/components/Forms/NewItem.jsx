@@ -1,11 +1,23 @@
 import React from 'react';
-import { Input, Select, Textarea } from './Input';
+import { Input, Select, Textarea, FileInput } from './Input';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { categoriesList } from '../assets/categoriesList';
 import { addItem } from '../../actions';
 
 class NewItem extends React.Component {
+  state = {
+    image: null,
+  };
+
+  onImageChange = (e) => {
+    let img = e.target.files[0];
+    this.setState({
+      image: URL.createObjectURL(img),
+    });
+    console.log(this.state.image);
+  };
+
   categories = () => {
     const list = [];
     categoriesList.map((category) => {
@@ -37,6 +49,11 @@ class NewItem extends React.Component {
             options={this.categories()}
             name='itemType'
             label='Item Type'
+          />
+          <Field
+            component={FileInput}
+            name='itemImg'
+            onChange={(e) => this.onImageChange(e)}
           />
           <div className='form_rows'>
             <div className='form_row'>

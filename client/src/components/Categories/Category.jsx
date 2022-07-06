@@ -1,7 +1,9 @@
 import React from 'react';
-import { active, categories } from './categoryVars';
 
-const Category = ({ name, defaultCategory, num, changeNum }) => {
+const Category = ({ name, num, changeNum }) => {
+  const active = document.querySelector('.category_active');
+  const categories = Array.from(document.querySelectorAll('.category'));
+
   window.addEventListener('resize', () => {
     active.style.width = `${categories[num].offsetWidth}px`;
     active.style.marginLeft = `${

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Categories.scss';
 import Category from './Category';
-import { categories } from './categoryVars';
 import { categoriesList } from '../assets/categoriesList';
 
 class Categories extends React.Component {
@@ -14,6 +13,7 @@ class Categories extends React.Component {
   }
 
   render() {
+    const categories = Array.from(document.querySelectorAll('.category'));
     return (
       <div className='categories-wrapper block-wrapper'>
         {/* <div className='categories block-header'>{this.props.name}</div> */}
@@ -25,7 +25,6 @@ class Categories extends React.Component {
                 background={category.background}
                 name={category.name[this.props.language]}
                 url={category.name['en'].toLowerCase()}
-                defaultCategory={categoriesList[0].name[this.props.language]}
                 num={this.state.num}
                 changeNum={() => {
                   this.setState({ num: idx });
