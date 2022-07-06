@@ -6,6 +6,7 @@ import { categoriesList } from '../assets/categoriesList';
 class Categories extends React.Component {
   state = {
     num: 0,
+    selected: false,
   };
 
   componentDidMount() {
@@ -26,9 +27,11 @@ class Categories extends React.Component {
                 name={category.name[this.props.language]}
                 url={category.name['en'].toLowerCase()}
                 num={this.state.num}
-                changeNum={() => {
-                  this.setState({ num: idx });
+                change={() => {
+                  this.setState({ num: idx, selected: !this.state.selected });
+                  console.log(this.state.selected);
                 }}
+                selected={this.state.selected}
               />
             );
           })}
@@ -46,6 +49,7 @@ class Categories extends React.Component {
           }
           className='category_active'
         ></div>
+        <div className='category_items'></div>
       </div>
     );
   }

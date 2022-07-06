@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Category = ({ name, num, changeNum }) => {
+const Category = ({ name, num, change }) => {
   const active = document.querySelector('.category_active');
   const categories = Array.from(document.querySelectorAll('.category'));
 
@@ -23,8 +23,7 @@ const Category = ({ name, num, changeNum }) => {
               e.target.getBoundingClientRect().left + window.pageXOffset
             }px`;
           }
-          changeNum();
-          console.log(num);
+          change();
         }}
       >
         {name}
