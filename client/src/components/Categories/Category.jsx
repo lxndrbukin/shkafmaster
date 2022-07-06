@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { active, categories } from './categoryVars';
 
 const Category = ({ name, defaultCategory, num, changeNum }) => {
-  const active = document.querySelector('.category_active');
-
   window.addEventListener('resize', () => {
-    const categories = Array.from(document.querySelectorAll('.category'));
-    const active = document.querySelector('.category_active');
-
     active.style.width = `${categories[num].offsetWidth}px`;
     active.style.marginLeft = `${
       categories[num].getBoundingClientRect().left
