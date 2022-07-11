@@ -1,17 +1,26 @@
 export const categorySlider = () => {
   const categories = Array.from(document.querySelectorAll('.category'));
-  const categoryItems = document.querySelector('.category_slides');
+  const categorySlides = document.querySelector('.category_slides');
   const categoriesContent = Array.from(
     document.querySelectorAll('.category_slide')
   );
+  let num = 0;
 
   for (let i = 0; i < categories.length; i++) {
     categories[i].addEventListener('click', () => {
-      categoryItems.style.transform = `translateX(-${
-        i * categoriesContent[0].clientWidth
+      categorySlides.style.transform = `translateX(${
+        i * -window.innerWidth
       }px)`;
+      console.log(i * -window.innerWidth);
+      num = i;
     });
   }
+
+  window.addEventListener('resize', () => {
+    categorySlides.style.transform = `translateX(${
+      num * -window.innerWidth
+    }px)`;
+  });
 };
 
 export const categoryActive = (e) => {

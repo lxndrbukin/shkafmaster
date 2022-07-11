@@ -1,93 +1,93 @@
 @import '../assets/variables.scss';
 
 .slider-wrapper {
-    // background-image: linear-gradient(to top left, $secondary-color, $main-color);
-    position: relative;
-    height: 400px;
-    overflow: hidden;
+	// background-image: linear-gradient(to top left, $secondary-color, $main-color);
+	position: relative;
+	height: 400px;
+	overflow: hidden;
 
-    .slider {
-        position: absolute;
-        display: flex;
-        will-change: transform;
-        transition: transform 0.3s ease-out;
+	.slider {
+		position: absolute;
+		display: flex;
+		will-change: transform;
+		transition: transform 0.3s ease-out;
 
-        &.grab {
-            cursor: grab;
-        }
+		&.grab {
+			cursor: grab;
+		}
 
-        &.grabbing {
-            cursor: grabbing;
-        }
+		&.grabbing {
+			cursor: grabbing;
+		}
 
-        .slide-wrapper {
-            width: 100vw;
+		.slide-wrapper {
+			width: 100vw;
 
-            .slide {
-                width: 100%;
-                height: 400px;
-                display: flex;
-                margin: auto;
-                justify-content: center;
-                background-size: cover;
-                background-repeat: no-repeat;
+			.slide {
+				width: 100%;
+				height: 400px;
+				display: flex;
+				margin: auto;
+				justify-content: center;
+				background-size: cover;
+				background-repeat: no-repeat;
 
-                .slide-info {
-                    width: 100%;
-                    height: fit-content;
-                    color: white;
-                    position: relative;
-                    height: 100%;
-                    overflow: hidden;
+				.slide-info {
+					width: 100%;
+					height: fit-content;
+					color: white;
+					position: relative;
+					height: 100%;
+					overflow: hidden;
 
-                    .slide-name {
-                        font-weight: bold;
-                        font-size: 22px;
-                        background-color: $main-color-transparent;
-                        width: fit-content;
-                        padding: 10px;
-                        position: absolute;
-                        bottom: 0;
-                    }
-                    .slide-text {
-                        font-weight: bold;
-                        height: 100px;
-                        width: 100px;
-                        display: flex;
-                        background-color: $main-color-transparent;
-                        transform: rotate(45deg);
-                        margin: auto;
-                        margin-top: -50px;
+					.slide-name {
+						font-weight: bold;
+						font-size: 22px;
+						background-color: $main-color-transparent;
+						width: fit-content;
+						padding: 10px;
+						position: absolute;
+						bottom: 0;
+					}
+					.slide-text {
+						font-weight: bold;
+						height: 100px;
+						width: 100px;
+						display: flex;
+						background-color: $main-color-transparent;
+						transform: rotate(45deg);
+						margin: auto;
+						margin-top: -50px;
 
-                        span {
-                            margin: 65% 5px 0 auto;
-                            font-size: 30px;
-                            height: fit-content;
-                            
-                        }
+						span {
+							margin: 65% 5px 0 auto;
+							font-size: 30px;
+							height: fit-content;
+							
+						}
 
-                    }
-                }
-            }
-        }
-    }
+					}
+				}
+			}
+		}
+	}
 
-    .slider-btn {
-        background-color: rgba(255, 255, 255, .4);
-        height: 100%;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        position: absolute;
+	.slider-btn {
+		background-color: rgba(255, 255, 255, .4);
+		height: 100%;
+		width: 40px;
+		display: flex;
+		justify-content: center;
+		position: absolute;
 
-        &:nth-of-type(2) {
-            right: 0;
-        }
-        
-        i {
-            margin: auto;
-            font-size: 25px;
-            padding: 5px;
-        }
-    }
+		&:nth-of-type(2) {
+			right: 0;
+		}
+		
+		i {
+			margin: auto;
+			font-size: 25px;
+			padding: 5px;
+		}
+	}
 }

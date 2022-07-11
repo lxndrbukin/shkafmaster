@@ -7,9 +7,9 @@ import {
 
 const CategoryHeader = ({ name, change, num }) => {
   useEffect(() => {
-    categorySlider();
     categoryResizeActive(num);
-  });
+    categorySlider();
+  }, ['']);
 
   const categoryButtons = () => {
     return (
