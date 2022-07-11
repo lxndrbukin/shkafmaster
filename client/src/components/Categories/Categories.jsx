@@ -14,6 +14,10 @@ class Categories extends React.Component {
     categoryResizeActive(this.state.num);
   }
 
+  componentDidMount() {
+    categoryResizeActive(this.state.num);
+  }
+
   categoriesList() {
     return categoriesList.map((category, idx) => {
       return (
@@ -23,7 +27,7 @@ class Categories extends React.Component {
           name={category.name[this.props.language]}
           url={category.name['en'].toLowerCase()}
           change={() => {
-            this.setState({ num: idx }, console.log(this.state.num));
+            this.setState({ num: idx });
           }}
           num={this.state.num}
         />

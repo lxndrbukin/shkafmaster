@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   min-height: 250px;
+  height: fit-content;
 
   .categories {
     display: flex;
@@ -42,6 +43,7 @@
       width: 100vw;
       display: flex;
       justify-content: center;
+      height: fit-content;
 
       .category-items {
         display: flex;

@@ -1,4 +1,4 @@
-export const categoryItems = [
+export const categoryItemsList = [
   {
     name: 'Wardrobe 926',
     category: 'Wardrobes/Dulapuri/Шкафы',

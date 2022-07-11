@@ -11,7 +11,7 @@ export const categorySlider = () => {
       categorySlides.style.transform = `translateX(${
         i * -window.innerWidth
       }px)`;
-      console.log(i * -window.innerWidth);
+      // categorySlides.style.transition = 'transform .3s';
       num = i;
     });
   }
@@ -20,15 +20,18 @@ export const categorySlider = () => {
     categorySlides.style.transform = `translateX(${
       num * -window.innerWidth
     }px)`;
+    // categorySlides.style.transition = 'none';
   });
 };
 
 export const categoryActive = (e) => {
   const active = document.querySelector('.category_active');
-  active.style.width = `${e.target.offsetWidth}px`;
-  active.style.marginLeft = `${
-    e.target.getBoundingClientRect().left + window.pageXOffset
-  }px`;
+  if (active) {
+    active.style.width = `${e.target.offsetWidth}px`;
+    active.style.marginLeft = `${
+      e.target.getBoundingClientRect().left + window.pageXOffset
+    }px`;
+  }
 };
 
 export const categoryResizeActive = (num) => {

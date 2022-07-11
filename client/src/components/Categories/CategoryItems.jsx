@@ -1,10 +1,10 @@
 import React from 'react';
 import CategoryItem from './CategoryItem';
-import { categoryItems } from './categoryItems';
+import { categoryItemsList } from './categoryItemsList';
 
 class CategoryItems extends React.Component {
   renderItems() {
-    return categoryItems.map((item, idx) => {
+    return categoryItemsList.map((item, idx) => {
       return (
         <CategoryItem
           key={idx}
