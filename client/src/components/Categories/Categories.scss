@@ -3,13 +3,12 @@
 .categories-wrapper {
   position: relative;
   overflow: hidden;
-  height: 100px;
+  min-height: 250px;
 
   .categories {
     display: flex;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     padding: 10px 0 0 0;
-    height: fit-content;
     width: fit-content;
     margin: auto;
 
@@ -33,14 +32,39 @@
     }
   }
 
-  .category_items {
+  .category_slides {
     display: flex;
     position: absolute;
     transition: transform 0.3s;
+    height: fit-content;
 
-    .category_content {
+    .category_slide {
       width: 100vw;
-      height: fit-content;
+      display: flex;
+      justify-content: center;
+
+      .category-items {
+        display: flex;
+        flex-wrap: wrap;
+
+        .category-item {
+          height: fit-content;
+
+          .category-item_img {
+            height: 150px;
+            width: 250px;
+            background-size: cover;
+          }
+
+          .category-item_name {
+            width: fit-content;
+          }
+
+          .category-item_price {
+            width: fit-content;
+          }
+        }
+      }
     }
   }
 

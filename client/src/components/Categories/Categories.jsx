@@ -1,12 +1,12 @@
 import React from 'react';
 import './Categories.scss';
-import Category from './Category';
+import CategoryHeader from './CategoryHeader';
 import { categoriesList } from '../assets/categoriesList';
+import CategoryItems from './CategoryItems';
 
 class Categories extends React.Component {
   state = {
     num: 0,
-    selected: false,
   };
 
   componentDidMount() {
@@ -16,17 +16,15 @@ class Categories extends React.Component {
   categoriesList() {
     return categoriesList.map((category, idx) => {
       return (
-        <Category
+        <CategoryHeader
           key={idx}
           background={category.background}
           name={category.name[this.props.language]}
           url={category.name['en'].toLowerCase()}
-          num={this.state.num}
           change={() => {
-            this.setState({ num: idx, selected: !this.state.selected });
-            console.log(this.state.selected);
+            this.setState({ num: idx });
           }}
-          selected={this.state.selected}
+          num={this.state.num}
         />
       );
     });
@@ -35,8 +33,8 @@ class Categories extends React.Component {
   categoryItems() {
     return categoriesList.map((category, idx) => {
       return (
-        <div className='category_content'>
-          {category.name[this.props.language]}
+        <div className='category_slide'>
+          <CategoryItems />
         </div>
       );
     });
@@ -46,7 +44,6 @@ class Categories extends React.Component {
     const categories = Array.from(document.querySelectorAll('.category'));
     return (
       <div className='categories-wrapper block-wrapper'>
-        {/* <div className='categories block-header'>{this.props.name}</div> */}
         <div className='categories'>{this.categoriesList()}</div>
         <div
           style={
@@ -61,7 +58,7 @@ class Categories extends React.Component {
           }
           className='category_active'
         ></div>
-        <div className='category_items'>{this.categoryItems()}</div>
+        <div className='category_slides'>{this.categoryItems()}</div>
       </div>
     );
   }
