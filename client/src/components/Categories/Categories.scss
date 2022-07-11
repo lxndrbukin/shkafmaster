@@ -36,6 +36,7 @@
   .category_items {
     display: flex;
     position: absolute;
+    transition: transform 0.3s;
 
     .category_content {
       width: 100vw;
