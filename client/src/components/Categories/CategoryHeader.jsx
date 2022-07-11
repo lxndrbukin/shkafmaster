@@ -1,13 +1,8 @@
 import React, { useEffect } from 'react';
-import {
-  categoryActive,
-  categorySlider,
-  categoryResizeActive,
-} from './categoryVars';
+import { categoryActive, categorySlider } from './categoryVars';
 
 const CategoryHeader = ({ name, change, num }) => {
   useEffect(() => {
-    categoryResizeActive(num);
     categorySlider();
   }, ['']);
 

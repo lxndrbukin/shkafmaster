@@ -3,14 +3,15 @@ import './Categories.scss';
 import CategoryHeader from './CategoryHeader';
 import { categoriesList } from '../assets/categoriesList';
 import CategoryItems from './CategoryItems';
+import { categoryResizeActive } from './categoryVars';
 
 class Categories extends React.Component {
   state = {
     num: 0,
   };
 
-  componentDidMount() {
-    this.setState({ num: 0 });
+  componentDidUpdate() {
+    categoryResizeActive(this.state.num);
   }
 
   categoriesList() {
@@ -22,7 +23,7 @@ class Categories extends React.Component {
           name={category.name[this.props.language]}
           url={category.name['en'].toLowerCase()}
           change={() => {
-            this.setState({ num: idx });
+            this.setState({ num: idx }, console.log(this.state.num));
           }}
           num={this.state.num}
         />
