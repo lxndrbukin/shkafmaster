@@ -1,6 +1,8 @@
 import React from 'react';
 import './Profile.scss';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Button } from '../assets/Button/Button';
 
 class Profile extends React.Component {
   addName() {
@@ -29,7 +31,7 @@ class Profile extends React.Component {
                 <span className='profile-info_line-info'>
                   {this.props.currentUser.fullName
                     ? this.props.currentUser.fullName
-                    : this.addName()}
+                    : 'Not specified'}
                 </span>
               </div>
               <div className='profile-info_line'>
@@ -37,7 +39,7 @@ class Profile extends React.Component {
                 <span className='profile-info_line-info'>
                   {this.props.currentUser.email
                     ? this.props.currentUser.email
-                    : this.addEmail()}
+                    : 'Not specified'}
                 </span>
               </div>
               <div className='profile-info_line'>
@@ -47,6 +49,12 @@ class Profile extends React.Component {
                     ? this.props.currentUser.orders
                     : 'No orders'}
                 </span>
+              </div>
+              <div className='profile-info_change'>
+                <Button
+                  name='Change'
+                  url={`/profile/${this.props.currentUser._id}/change`}
+                />
               </div>
             </div>
           </div>

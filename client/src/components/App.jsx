@@ -16,6 +16,7 @@ import MainPage from './Pages/MainPage';
 import OrdersPage from './Pages/OrdersPage';
 import OrderForm from './Forms/OrderForm';
 import OfferForm from './Forms/OfferForm';
+import ChangeForm from './Forms/ChangeForm';
 import OffersPage from './Pages/OffersPage';
 import NewItem from './Forms/NewItem';
 
@@ -61,7 +62,16 @@ class App extends React.Component {
                 element={<MainPage language={this.state.language} />}
               />
               <Route path='/login' exact element={this.showLoginPage()} />
-              <Route path='/profile' exact element={this.showProfilePage()} />
+              <Route
+                path='/profile/:id'
+                exact
+                element={this.showProfilePage()}
+              />
+              <Route
+                path='/profile/:id/change'
+                exact
+                element={<ChangeForm />}
+              />
               <Route
                 path='/order'
                 element={<OrderForm language={this.state.language} />}

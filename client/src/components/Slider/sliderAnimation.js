@@ -49,8 +49,8 @@ export const sliderAnimation = (sliderClassName) => {
       btns[currentIndex].classList.remove('slider-button_active');
       currentIndex = i;
       btns[i].classList.add('slider-button_active');
-      setPositionByIndex();
       clearInterval(sliderInterval);
+      setPositionByIndex();
       // setInterval(sliderInterval, 4000);
     });
   }

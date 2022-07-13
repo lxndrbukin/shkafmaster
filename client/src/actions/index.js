@@ -10,6 +10,11 @@ export const loginUser = (formValues) => async (dispatch) => {
   dispatch({ type: 'LOGIN_USER', payload: res.data });
 };
 
+export const changeUserData = (formValues) => async (dispatch) => {
+  const res = await axios.put('/api/current_user', { ...formValues });
+  dispatch({ type: 'CHANGE_USER_DATA', payload: res.data });
+};
+
 export const logoutUser = () => async (dispatch) => {
   const res = await axios.get('/api/logout');
   dispatch({ type: 'LOGOUT_USER', payload: res.data });

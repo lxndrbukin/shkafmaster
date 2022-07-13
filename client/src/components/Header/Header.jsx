@@ -84,10 +84,6 @@ const Header = ({ fetchUser, currentUser, changeLanguage, language }) => {
               <span>MASTER</span>
             </div>
           </div>
-          {/* <div className='header-logo_secondary'>
-            <span>{headerLocalization.logoText.firstLine[language]}</span>
-            <span>{headerLocalization.logoText.secondLine[language]}</span>
-          </div> */}
         </NavLink>
         <div className='header-menu'>{showLinks()}</div>
         <div className='header-menu_btns'>

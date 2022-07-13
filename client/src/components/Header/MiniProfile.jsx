@@ -41,7 +41,7 @@ class MiniProfile extends React.Component {
         >
           <ul>
             <li>
-              <NavLink to='/profile'>
+              <NavLink to={`/profile/${this.props.currentUser._id}`}>
                 <button>Profile</button>
               </NavLink>
             </li>
