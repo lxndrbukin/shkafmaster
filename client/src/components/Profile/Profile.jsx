@@ -3,6 +3,7 @@ import './Profile.scss';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from '../assets/Button/Button';
+import profileLocalization from '../assets/Localization/profileLocalization.json';
 
 class Profile extends React.Component {
   addName() {
@@ -16,7 +17,9 @@ class Profile extends React.Component {
   render() {
     return (
       <div className='profile-wrapper'>
-        <div className='profile_header'>Profile</div>
+        <div className='profile_header'>
+          {profileLocalization.profile.header[this.props.language]}
+        </div>
         <div className='profile'>
           <div className='profile-info'>
             <div className='profile-info_avatar'>
@@ -27,7 +30,9 @@ class Profile extends React.Component {
             </div>
             <div className='profile-info_lines'>
               <div className='profile-info_line'>
-                <span className='profile-info_line-subject'>Name: </span>
+                <span className='profile-info_line-subject'>
+                  {profileLocalization.profile.fullName[this.props.language]}:{' '}
+                </span>
                 <span className='profile-info_line-info'>
                   {this.props.currentUser.fullName
                     ? this.props.currentUser.fullName
@@ -35,7 +40,9 @@ class Profile extends React.Component {
                 </span>
               </div>
               <div className='profile-info_line'>
-                <span className='profile-info_line-subject'>Email: </span>
+                <span className='profile-info_line-subject'>
+                  {profileLocalization.profile.email[this.props.language]}:{' '}
+                </span>
                 <span className='profile-info_line-info'>
                   {this.props.currentUser.email
                     ? this.props.currentUser.email
@@ -43,7 +50,9 @@ class Profile extends React.Component {
                 </span>
               </div>
               <div className='profile-info_line'>
-                <span className='profile-info_line-subject'>Orders: </span>
+                <span className='profile-info_line-subject'>
+                  {profileLocalization.profile.orders[this.props.language]}:{' '}
+                </span>
                 <span className='profile-info_line-info'>
                   {this.props.currentUser.orders
                     ? this.props.currentUser.orders
@@ -52,7 +61,9 @@ class Profile extends React.Component {
               </div>
               <div className='profile-info_change'>
                 <Button
-                  name='Change'
+                  name={
+                    profileLocalization.change.changeBtn[this.props.language]
+                  }
                   url={`/profile/${this.props.currentUser._id}/change`}
                 />
               </div>

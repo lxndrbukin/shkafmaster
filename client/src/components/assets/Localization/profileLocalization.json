@@ -1,0 +1,58 @@
+{
+  "miniProfile": {
+    "profileBtn": {
+      "en": "Profile",
+      "ro": "Contul",
+      "ru": "Профиль"
+    },
+    "settings": {
+      "en": "Settings",
+      "ro": "Preferinte",
+      "ru": "Настройки"
+    },
+    "logout": {
+      "en": "Log out",
+      "ro": "Iesire",
+      "ru": "Выйти"
+    }
+  },
+  "profile": {
+    "header":{
+      "en": "Profile",
+      "ro": "Contul",
+      "ru": "Профиль"
+    },
+    "fullName": {
+      "en": "Full Name",
+      "ro": "Numele, Prenumele",
+      "ru": "Имя и фамилия"
+    },
+    "email": {
+      "en": "Email",
+      "ro": "E-mail",
+      "ru": "Эл. почта"
+    },
+    "orders": {
+      "en": "Orders",
+      "ro": "Comenzi",
+      "ru": "Заказы"
+    }
+  },
+  "change": {
+    "changeBtn": {
+      "en": "Change",
+      "ro": "Schimbă",
+      "ru": "Изменить"
+    },
+    "fullName": {
+      "en": "Full Name",
+      "ro": "Numele, Prenumele",
+      "ru": "Имя и фамилия"
+    },
+    "email": {
+      "en": "Email",
+      "ro": "E-mail",
+      "ru": "Эл. почта"
+    }
+  }
+}

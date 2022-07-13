@@ -37,7 +37,7 @@ class App extends React.Component {
 
   showProfilePage() {
     if (this.props.currentUser && this.props.currentUser !== 'Logged Out') {
-      return <ProfilePage />;
+      return <ProfilePage language={this.state.language} />;
     } else {
       return <Navigate to='/' />;
     }
@@ -70,7 +70,7 @@ class App extends React.Component {
               <Route
                 path='/profile/:id/change'
                 exact
-                element={<ChangeForm />}
+                element={<ChangeForm language={this.state.language} />}
               />
               <Route
                 path='/order'

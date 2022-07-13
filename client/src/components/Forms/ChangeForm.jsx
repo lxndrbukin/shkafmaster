@@ -4,19 +4,27 @@ import { Input } from './Input';
 import { connect } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { changeUserData } from '../../actions';
+import profileLocalization from '../assets/Localization/profileLocalization.json';
 
 class ChangeForm extends React.Component {
   onSubmit = (formValues) => {
     this.props.changeUserData(formValues);
-    return <Navigate to='/' />;
   };
 
   render() {
     return (
       <form className='form' onSubmit={this.props.handleSubmit(this.onSubmit)}>
         <Field component={Input} label='User ID' name='_id' disabled />
-        <Field component={Input} label='Name' name='fullName' />
-        <Field component={Input} label='Email' name='email' />
+        <Field
+          component={Input}
+          label={profileLocalization.change.fullName[this.props.language]}
+          name='fullName'
+        />
+        <Field
+          component={Input}
+          label={profileLocalization.change.email[this.props.language]}
+          name='email'
+        />
         <input type='submit' className='form-button' />
       </form>
     );
