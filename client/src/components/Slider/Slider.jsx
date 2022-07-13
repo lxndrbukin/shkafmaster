@@ -6,6 +6,16 @@ import { sliderAnimation } from './sliderAnimation';
 const Slider = () => {
   useEffect(() => sliderAnimation('slider'));
 
+  const sliderBtns = () => {
+    return slidesList.map((slide, idx) => {
+      return (
+        <React.Fragment key={idx}>
+          <div className='slider-button'></div>
+        </React.Fragment>
+      );
+    });
+  };
+
   const showSlides = () => {
     return slidesList.map((slide, idx) => {
       return (
@@ -31,11 +41,7 @@ const Slider = () => {
   return (
     <div className='slider-wrapper'>
       <div className='slider'>{showSlides()}</div>
-      <div className='slider-buttons'>
-        <div className='slider-button'></div>
-        <div className='slider-button'></div>
-        <div className='slider-button'></div>
-      </div>
+      <div className='slider-buttons'>{sliderBtns()}</div>
     </div>
   );
 };

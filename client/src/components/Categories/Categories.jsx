@@ -43,7 +43,7 @@ class Categories extends React.Component {
   categoryItems() {
     return categoriesList.map((category, idx) => {
       return (
-        <div className='category_slide'>
+        <div className='category_slide' key={idx}>
           <CategoryItems />
         </div>
       );

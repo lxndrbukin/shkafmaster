@@ -1,7 +1,6 @@
 export const sliderAnimation = (sliderClassName) => {
   const slider = document.querySelector(`.${sliderClassName}`);
-  // const rightBtn = document.querySelector(`.right`);
-  // const leftBtn = document.querySelector(`.left`);
+  const btns = Array.from(document.querySelectorAll('.slider-button'));
   slider.classList.add('grab');
   const slides = Array.from(document.querySelectorAll('.slide'));
 
@@ -11,20 +10,6 @@ export const sliderAnimation = (sliderClassName) => {
     prevTranslate = 0,
     animationID,
     currentIndex = 0;
-
-  // rightBtn.addEventListener('click', () => {
-  //   if (currentIndex < slides.length - 1) {
-  //     currentIndex++;
-  //     setPositionByIndex();
-  //   }
-  // });
-
-  // leftBtn.addEventListener('click', () => {
-  //   if (currentIndex <= slides.length - 1 && currentIndex !== 0) {
-  //     currentIndex--;
-  //     setPositionByIndex();
-  //   }
-  // });
 
   slides.map((slide, index) => {
     const slideInfo = document.querySelector('.slide-info');
@@ -42,11 +27,14 @@ export const sliderAnimation = (sliderClassName) => {
 
   window.addEventListener('resize', setPositionByIndex);
 
-  // window.oncontextmenu = function (event) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //     return false;
-  // }
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', () => {
+      btns[currentIndex].classList.remove('slider-button_active');
+      currentIndex = i;
+      btns[i].classList.add('slider-button_active');
+      setPositionByIndex();
+    });
+  }
 
   function getPositionX(event) {
     return event.type.includes('mouse')
