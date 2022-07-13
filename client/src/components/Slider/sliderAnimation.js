@@ -27,12 +27,31 @@ export const sliderAnimation = (sliderClassName) => {
 
   window.addEventListener('resize', setPositionByIndex);
 
+  btns[0].classList.add('slider-button_active');
+
+  function sliderInterval() {
+    if (currentIndex < btns.length - 1) {
+      btns[currentIndex].classList.remove('slider-button_active');
+      currentIndex++;
+      btns[currentIndex].classList.add('slider-button_active');
+    } else if (currentIndex === btns.length - 1) {
+      btns[currentIndex].classList.remove('slider-button_active');
+      currentIndex = 0;
+      btns[currentIndex].classList.add('slider-button_active');
+    }
+    setPositionByIndex();
+  }
+
+  setInterval(sliderInterval, 4000);
+
   for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', () => {
       btns[currentIndex].classList.remove('slider-button_active');
       currentIndex = i;
       btns[i].classList.add('slider-button_active');
       setPositionByIndex();
+      clearInterval(sliderInterval);
+      // setInterval(sliderInterval, 4000);
     });
   }
 
