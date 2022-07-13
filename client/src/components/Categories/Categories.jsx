@@ -3,7 +3,11 @@ import './Categories.scss';
 import CategoryHeader from './CategoryHeader';
 import { categoriesList } from '../assets/categoriesList';
 import CategoryItems from './CategoryItems';
-import { categoryResizeActive } from './categoryVars';
+import {
+  categoryResizeActive,
+  activeStyling,
+  componentMountActive,
+} from './categoryVars';
 
 class Categories extends React.Component {
   state = {
@@ -16,6 +20,7 @@ class Categories extends React.Component {
 
   componentDidMount() {
     categoryResizeActive(this.state.num);
+    componentMountActive(this.state.num);
   }
 
   categoriesList() {
@@ -51,16 +56,7 @@ class Categories extends React.Component {
       <div className='categories-wrapper block-wrapper'>
         <div className='categories'>{this.categoriesList()}</div>
         <div
-          style={
-            categories[this.state.num]
-              ? {
-                  width: categories[this.state.num].offsetWidth + 'px',
-                  marginLeft:
-                    categories[this.state.num].getBoundingClientRect().left +
-                    'px',
-                }
-              : { width: '100px' }
-          }
+          style={activeStyling(this.state.num)}
           className='category_active'
         ></div>
         <div className='category_slides'>{this.categoryItems()}</div>

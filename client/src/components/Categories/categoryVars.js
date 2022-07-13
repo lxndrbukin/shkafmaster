@@ -44,3 +44,27 @@ export const categoryResizeActive = (num) => {
     }px`;
   });
 };
+
+export const activeStyling = (num) => {
+  const categories = Array.from(document.querySelectorAll('.category'));
+  if (categories[num]) {
+    return {
+      width: categories[num].offsetWidth + 'px',
+      marginLeft: categories[num].getBoundingClientRect().left + 'px',
+    };
+  } else {
+    const categories = Array.from(document.querySelectorAll('.category'));
+    return {
+      width: '100px',
+    };
+  }
+};
+
+export const componentMountActive = (num) => {
+  const categories = Array.from(document.querySelectorAll('.category'));
+  const active = document.querySelector('.category_active');
+  active.style.width = `${categories[num].offsetWidth}px`;
+  active.style.marginLeft = `${
+    categories[num].getBoundingClientRect().left + window.pageXOffset
+  }px`;
+};
