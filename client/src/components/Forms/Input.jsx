@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export const Input = ({ label, input, name, type, value, style }) => {
+export const Input = ({ label, input, name, type, value, style, disabled }) => {
   return (
     <div className='form-input' style={style}>
       <label>{label}</label>
-      <input type={type} name={name} value={value} {...input} />
+      <input
+        type={type}
+        name={name}
+        value={value}
+        {...input}
+        style={
+          disabled
+            ? { opacity: '0.5', pointerEvents: 'none' }
+            : { opacity: '1' }
+        }
+      />
     </div>
   );
 };

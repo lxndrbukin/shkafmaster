@@ -14,7 +14,7 @@ class ChangeForm extends React.Component {
   render() {
     return (
       <form className='form' onSubmit={this.props.handleSubmit(this.onSubmit)}>
-        <Field component={Input} label='User ID' name='_id' />
+        <Field component={Input} label='User ID' name='_id' disabled />
         <Field component={Input} label='Name' name='fullName' />
         <Field component={Input} label='Email' name='email' />
         <input type='submit' className='form-button' />
@@ -28,6 +28,14 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser,
     initialValues: {
       _id: state.currentUser ? state.currentUser._id : '',
+      fullName:
+        state.currentUser && state.currentUser.fullName
+          ? state.currentUser.fullName
+          : '',
+      email:
+        state.currentUser && state.currentUser.email
+          ? state.currentUser.email
+          : '',
     },
   };
 };
