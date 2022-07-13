@@ -31,12 +31,11 @@ const Slider = () => {
   return (
     <div className='slider-wrapper'>
       <div className='slider'>{showSlides()}</div>
-      {/* <div className='slider-btn right'>
-        <i className='fas fa-angle-right'></i>
+      <div className='slider-buttons'>
+        <div className='slider-button'></div>
+        <div className='slider-button'></div>
+        <div className='slider-button'></div>
       </div>
-      <div className='slider-btn left'>
-        <i className='fas fa-angle-left'></i>
-      </div> */}
     </div>
   );
 };

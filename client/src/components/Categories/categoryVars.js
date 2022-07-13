@@ -11,7 +11,6 @@ export const categorySlider = () => {
       categorySlides.style.transform = `translateX(${
         i * -window.innerWidth
       }px)`;
-      // categorySlides.style.transition = 'transform .3s';
       num = i;
     });
   }
@@ -20,7 +19,6 @@ export const categorySlider = () => {
     categorySlides.style.transform = `translateX(${
       num * -window.innerWidth
     }px)`;
-    // categorySlides.style.transition = 'none';
   });
 };
 
